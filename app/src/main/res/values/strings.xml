@@ -5,4 +5,11 @@
     <string name="yun">运</string>
     <string name="book">书籍</string>
     <string name="record">记录</string>
+    <string name="year">年</string>
+    <string name="month">月</string>
+    <string name="day">日</string>
+    <string name="hour">时</string>
+    <string name="minute">分</string>
+    <string name="pre_ti_shi">请选择出生年月日（上下滑动即可选择）</string>
+    <string name="pai_ba_zi">排八字</string>
 </resources>
