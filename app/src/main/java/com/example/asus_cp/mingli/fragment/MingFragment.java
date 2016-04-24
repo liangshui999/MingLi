@@ -8,9 +8,12 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.TextView;
 
 import com.example.asus_cp.mingli.R;
 import com.example.asus_cp.mingli.custumview.WheelView;
+import com.example.asus_cp.mingli.util.CaculateGanZhi;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,14 +35,19 @@ public class MingFragment extends Fragment implements View.OnClickListener {
 
     public static final int OFFSET=0;//控制时间区域的高度，有几行，如果等于2则上面有2行，下面有2行，总共是4行
 
-    //天干的数组
-    private String[] tianGan=new String[]{"甲","乙","丙","丁","戊","己","庚","辛","壬","癸"};
+    private CaculateGanZhi caculateGanZhi;//工具类的对象
 
-    //地支的数组
-    private String[] diZhi=new String[]{"子","丑","寅","卯","辰","巳","午","未","申","酉","戌","亥"};
+    private String year=1950+"";//用户选择的年数据
+    private String month=1+"";//用户选择的月数据
+    private String day=1+"";//用户选择的日数据
+    private String hour=1+"";//用户选择的时数据
+    private String minute=1+"";//用户选择的分钟数据
 
-    //六十花甲的数组
-    private String[] huaJia;
+    private Button paiBaZi;
+    private TextView nianZhu;
+    private TextView yueZhu;
+    private TextView riZhu;
+    private TextView shiZhu;
 
     @Nullable
     @Override
@@ -49,6 +57,11 @@ public class MingFragment extends Fragment implements View.OnClickListener {
         View v=View.inflate(getContext(), R.layout.ming_fragment_layout,null);
 //        Button date= (Button) v.findViewById(R.id.btn_date_piker);
 //        Button time= (Button) v.findViewById(R.id.btn_time_piker);
+        paiBaZi= (Button) v.findViewById(R.id.btn_pai_bazi);
+        nianZhu= (TextView) v.findViewById(R.id.text_nianzhu);
+        yueZhu= (TextView) v.findViewById(R.id.text_yuezhu);
+        riZhu= (TextView) v.findViewById(R.id.text_rizhu);
+        shiZhu= (TextView) v.findViewById(R.id.text_shizhu);
         WheelView wheelViewYear= (WheelView) v.findViewById(R.id.whe_year);
         WheelView wheelViewMonth= (WheelView) v.findViewById(R.id.whe_month);
         WheelView wheelViewDay= (WheelView) v.findViewById(R.id.whe_day);
@@ -61,6 +74,7 @@ public class MingFragment extends Fragment implements View.OnClickListener {
             @Override
             public void onSelected(int selectedIndex, String item) {
                 super.onSelected(selectedIndex, item);
+                year=item;
                 Log.d(tag, "selectedIndex: " + selectedIndex + ", item: " + item);
             }
         });
@@ -71,6 +85,7 @@ public class MingFragment extends Fragment implements View.OnClickListener {
             @Override
             public void onSelected(int selectedIndex, String item) {
                 super.onSelected(selectedIndex, item);
+                month=item;
                 Log.d(tag, "selectedIndex: " + selectedIndex + ", item: " + item);
             }
         });
@@ -81,6 +96,7 @@ public class MingFragment extends Fragment implements View.OnClickListener {
             @Override
             public void onSelected(int selectedIndex, String item) {
                 super.onSelected(selectedIndex, item);
+                day=item;
                 Log.d(tag, "selectedIndex: " + selectedIndex + ", item: " + item);
             }
         });
@@ -91,6 +107,7 @@ public class MingFragment extends Fragment implements View.OnClickListener {
             @Override
             public void onSelected(int selectedIndex, String item) {
                 super.onSelected(selectedIndex, item);
+                hour=item;
                 Log.d(tag, "selectedIndex: " + selectedIndex + ", item: " + item);
             }
         });
@@ -101,11 +118,13 @@ public class MingFragment extends Fragment implements View.OnClickListener {
             @Override
             public void onSelected(int selectedIndex, String item) {
                 super.onSelected(selectedIndex, item);
+                minute=item;
                 Log.d(tag, "selectedIndex: " + selectedIndex + ", item: " + item);
             }
         });
 //        date.setOnClickListener(this);
 //        time.setOnClickListener(this);
+        paiBaZi.setOnClickListener(this);
         return v;
 
     }
@@ -123,8 +142,9 @@ public class MingFragment extends Fragment implements View.OnClickListener {
         fuZhi(months,12,firstExcepteYear);
         fuZhi(days,31,firstExcepteYear);
         fuZhi(hours,24,firstExcepteYear);
-        fuZhi(minutes,60,firstExcepteYear);
-        createHuaJia();
+        fuZhi(minutes, 60, firstExcepteYear);
+        caculateGanZhi=new CaculateGanZhi();
+
     }
 
     /**
@@ -138,25 +158,17 @@ public class MingFragment extends Fragment implements View.OnClickListener {
         }
     }
 
-    /**
-     * 生成六十花甲的方法
-     *
-     */
-    public void createHuaJia(){
-        huaJia=new String[60];
-        for(int i=0;i<60;i++){
-            if(i<10){
-                huaJia[i]=tianGan[i]+diZhi[i];
-            }else if(i>=10&&i<12){
-                huaJia[i]=tianGan[i-10]+diZhi[i];
-            }
 
-        }
-    }
 
     @Override
     public void onClick(View v) {
-//        switch (v.getId()){
+        switch (v.getId()){
+            case R.id.btn_pai_bazi:
+                nianZhu.setText(caculateGanZhi.convertYearToGanZhi(year,month,day,hour,minute));
+                yueZhu.setText(caculateGanZhi.convertMonthToGanZhi(year,month,day,hour,minute));
+                riZhu.setText(caculateGanZhi.getRiGanZhi(year,month,day));
+                shiZhu.setText(caculateGanZhi.getHourGanZhi(year,month,day,hour));
+                break;
 //            case R.id.btn_date_piker:
 //                Calendar c = Calendar.getInstance();
 //                int year = c.get(Calendar.YEAR);
@@ -172,7 +184,7 @@ public class MingFragment extends Fragment implements View.OnClickListener {
 //                TimePickerDialog timePickerDialog=new TimePickerDialog(context,this,hour,minute,true);
 //                timePickerDialog.show();
 //                break;
-//        }
+        }
     }
 
 

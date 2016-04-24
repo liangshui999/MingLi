@@ -1,4 +1,4 @@
-package com.example.asus_cp.mingli;
+package com.example.asus_cp.mingli.activity;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.LinearLayout;
 
+import com.example.asus_cp.mingli.R;
 import com.example.asus_cp.mingli.fragment.BookFragment;
 import com.example.asus_cp.mingli.fragment.MingFragment;
 import com.example.asus_cp.mingli.fragment.RecordFragment;

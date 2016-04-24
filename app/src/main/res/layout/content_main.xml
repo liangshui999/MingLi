@@ -9,7 +9,7 @@
     android:paddingRight="@dimen/main_layout_margin"
     android:paddingTop="@dimen/main_layout_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.example.asus_cp.mingli.MainActivity"
+    tools:context=".activity.MainActivity"
     tools:showIn="@layout/activity_main"
     android:orientation="vertical">
 
