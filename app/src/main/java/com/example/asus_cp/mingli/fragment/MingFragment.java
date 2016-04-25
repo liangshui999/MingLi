@@ -31,6 +31,7 @@ public class MingFragment extends Fragment implements View.OnClickListener {
     private List<String> minutes;
     private int firstYear=1950;//年的初始值
     private int firstExcepteYear=1;//除了年以外的，其他的初始值
+    private int firstHourAndMinute=0;//小时和分钟的初始值
 
 
     public static final int OFFSET=0;//控制时间区域的高度，有几行，如果等于2则上面有2行，下面有2行，总共是4行
@@ -40,8 +41,8 @@ public class MingFragment extends Fragment implements View.OnClickListener {
     private String year=1950+"";//用户选择的年数据
     private String month=1+"";//用户选择的月数据
     private String day=1+"";//用户选择的日数据
-    private String hour=1+"";//用户选择的时数据
-    private String minute=1+"";//用户选择的分钟数据
+    private String hour=0+"";//用户选择的时数据
+    private String minute=0+"";//用户选择的分钟数据
 
     private Button paiBaZi;
     private TextView nianZhu;
@@ -74,7 +75,7 @@ public class MingFragment extends Fragment implements View.OnClickListener {
             @Override
             public void onSelected(int selectedIndex, String item) {
                 super.onSelected(selectedIndex, item);
-                year=item;
+                year=item.trim();//免得有空格之类的，到时候解析不出来
                 Log.d(tag, "selectedIndex: " + selectedIndex + ", item: " + item);
             }
         });
@@ -85,7 +86,7 @@ public class MingFragment extends Fragment implements View.OnClickListener {
             @Override
             public void onSelected(int selectedIndex, String item) {
                 super.onSelected(selectedIndex, item);
-                month=item;
+                month=item.trim();//免得有空格之类的，到时候解析不出来
                 Log.d(tag, "selectedIndex: " + selectedIndex + ", item: " + item);
             }
         });
@@ -96,7 +97,7 @@ public class MingFragment extends Fragment implements View.OnClickListener {
             @Override
             public void onSelected(int selectedIndex, String item) {
                 super.onSelected(selectedIndex, item);
-                day=item;
+                day=item.trim();//免得有空格之类的，到时候解析不出来
                 Log.d(tag, "selectedIndex: " + selectedIndex + ", item: " + item);
             }
         });
@@ -107,7 +108,7 @@ public class MingFragment extends Fragment implements View.OnClickListener {
             @Override
             public void onSelected(int selectedIndex, String item) {
                 super.onSelected(selectedIndex, item);
-                hour=item;
+                hour=item.trim();//免得有空格之类的，到时候解析不出来
                 Log.d(tag, "selectedIndex: " + selectedIndex + ", item: " + item);
             }
         });
@@ -118,7 +119,7 @@ public class MingFragment extends Fragment implements View.OnClickListener {
             @Override
             public void onSelected(int selectedIndex, String item) {
                 super.onSelected(selectedIndex, item);
-                minute=item;
+                minute=item.trim();//免得有空格之类的，到时候解析不出来
                 Log.d(tag, "selectedIndex: " + selectedIndex + ", item: " + item);
             }
         });
@@ -141,8 +142,8 @@ public class MingFragment extends Fragment implements View.OnClickListener {
         fuZhi(years,200,firstYear);
         fuZhi(months,12,firstExcepteYear);
         fuZhi(days,31,firstExcepteYear);
-        fuZhi(hours,24,firstExcepteYear);
-        fuZhi(minutes, 60, firstExcepteYear);
+        fuZhi(hours,24,firstHourAndMinute);
+        fuZhi(minutes, 60, firstHourAndMinute);
         caculateGanZhi=new CaculateGanZhi();
 
     }
@@ -164,10 +165,10 @@ public class MingFragment extends Fragment implements View.OnClickListener {
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.btn_pai_bazi:
-                nianZhu.setText(caculateGanZhi.convertYearToGanZhi(year,month,day,hour,minute));
-                yueZhu.setText(caculateGanZhi.convertMonthToGanZhi(year,month,day,hour,minute));
-                riZhu.setText(caculateGanZhi.getRiGanZhi(year,month,day));
-                shiZhu.setText(caculateGanZhi.getHourGanZhi(year,month,day,hour));
+                nianZhu.setText(convertBaZhiDirection(caculateGanZhi.getYearGanZhi(year, month, day, hour, minute)));
+                yueZhu.setText(convertBaZhiDirection(caculateGanZhi.getMonthGanZhi(year, month, day, hour, minute)));
+                riZhu.setText(convertBaZhiDirection(caculateGanZhi.getRiGanZhi(year, month, day, hour)));
+                shiZhu.setText(convertBaZhiDirection(caculateGanZhi.getHourGanZhi(year, month, day, hour)));
                 break;
 //            case R.id.btn_date_piker:
 //                Calendar c = Calendar.getInstance();
@@ -185,6 +186,16 @@ public class MingFragment extends Fragment implements View.OnClickListener {
 //                timePickerDialog.show();
 //                break;
         }
+    }
+
+    /**
+     * 将横向的八字转换成竖向的八字
+     */
+    public String convertBaZhiDirection(String str){
+        String tianGan=caculateGanZhi.getTianGanFromGanZhi(str);
+        String diZhi=caculateGanZhi.getDiZhiFromGanZhi(str);
+        String ganZhi=tianGan+"\n"+diZhi;
+        return ganZhi;
     }
 
 

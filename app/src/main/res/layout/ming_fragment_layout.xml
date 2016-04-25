@@ -129,11 +129,69 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
                 android:background="@color/danlv">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="0.5"
+                    android:layout_height="wrap_content"
+                    android:background="@color/dan_huang"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/si_zhu"
+                        android:layout_gravity="center"
+                        android:textSize="20sp"
+                        android:layout_marginBottom="3dp"
+                        android:layout_marginTop="1dp"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/shi_shen"
+                        android:layout_gravity="center"
+                        android:textSize="16sp"
+                        android:layout_marginBottom="3dp"
+                        android:layout_marginTop="8dp"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/ba_zi"
+                        android:layout_gravity="center"
+                        android:textSize="20sp"
+                        android:layout_marginBottom="3dp"
+                        android:layout_marginTop="2sp"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/cang_gan"
+                        android:layout_gravity="center"
+                        android:textSize="16sp"
+                        android:layout_marginBottom="3dp"
+                        android:layout_marginTop="8dp"/>
+
+                </LinearLayout>
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="@string/nian_zhu"
+                        android:textSize="22sp"
+                        android:layout_marginBottom="10dp"
+                        android:background="@color/dan_huang"/>
+                    <TextView
+                        android:id="@+id/text_nian_shi_shen"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:textColor="@color/qian_hong"
+                        android:layout_marginBottom="5dp"
+                        android:textSize="16sp"
+                        android:text="七杀"/>
                     <TextView
                         android:id="@+id/text_nianzhu"
                         android:layout_width="wrap_content"
@@ -143,6 +201,15 @@
                         android:textSize="22sp"
                         android:textStyle="bold"
                         />
+                    <TextView
+                        android:id="@+id/text_nian_cang_gan"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="丁，己"
+                        android:textSize="16sp"
+                        android:textColor="@color/qian_hong"
+                        android:layout_marginTop="5dp"/>
 
                 </LinearLayout>
 
@@ -151,6 +218,23 @@
                     android:layout_weight="1"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="@string/yue_zhu"
+                        android:textSize="22sp"
+                        android:layout_marginBottom="10dp"
+                        android:background="@color/dan_huang"/>
+                    <TextView
+                        android:id="@+id/text_yue_shi_shen"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:textColor="@color/qian_hong"
+                        android:layout_marginBottom="5dp"
+                        android:textSize="16sp"
+                        android:text="七杀"/>
                     <TextView
                         android:id="@+id/text_yuezhu"
                         android:layout_width="wrap_content"
@@ -160,6 +244,15 @@
                         android:textSize="22sp"
                         android:textStyle="bold"
                         />
+                    <TextView
+                        android:id="@+id/text_yue_cang_gan"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="丁，己"
+                        android:textSize="16sp"
+                        android:textColor="@color/qian_hong"
+                        android:layout_marginTop="5dp"/>
 
                 </LinearLayout>
 
@@ -168,6 +261,22 @@
                     android:layout_weight="1"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="@string/ri_zhu"
+                        android:textSize="22sp"
+                        android:layout_marginBottom="10dp"
+                        android:background="@color/dan_huang"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:textColor="@color/qian_hong"
+                        android:layout_marginBottom="5dp"
+                        android:textSize="16sp"
+                        android:text="@string/ri_yuan"/>
                     <TextView
                         android:id="@+id/text_rizhu"
                         android:layout_width="wrap_content"
@@ -177,6 +286,15 @@
                         android:textSize="22sp"
                         android:textStyle="bold"
                         />
+                    <TextView
+                        android:id="@+id/text_ri_cang_gan"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="丁，己"
+                        android:textSize="16sp"
+                        android:textColor="@color/qian_hong"
+                        android:layout_marginTop="5dp"/>
 
                 </LinearLayout>
                 <LinearLayout
@@ -184,6 +302,23 @@
                     android:layout_weight="1"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="@string/shi_zhu"
+                        android:textSize="22sp"
+                        android:layout_marginBottom="10dp"
+                        android:background="@color/dan_huang"/>
+                    <TextView
+                        android:id="@+id/text_shi_shi_shen"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:textColor="@color/qian_hong"
+                        android:layout_marginBottom="5dp"
+                        android:textSize="16sp"
+                        android:text="七杀"/>
                     <TextView
                         android:id="@+id/text_shizhu"
                         android:layout_width="wrap_content"
@@ -193,6 +328,15 @@
                         android:textSize="22sp"
                         android:textStyle="bold"
                         />
+                    <TextView
+                        android:id="@+id/text_shi_cang_gan"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="丁，己"
+                        android:textSize="16sp"
+                        android:textColor="@color/qian_hong"
+                        android:layout_marginTop="5dp"/>
 
                 </LinearLayout>
             </LinearLayout>

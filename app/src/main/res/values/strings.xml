@@ -12,4 +12,13 @@
     <string name="minute">分</string>
     <string name="pre_ti_shi">请选择出生年月日（上下滑动即可选择）</string>
     <string name="pai_ba_zi">排八字</string>
+    <string name="nian_zhu">年柱</string>
+    <string name="yue_zhu">月柱</string>
+    <string name="ri_zhu">日柱</string>
+    <string name="shi_zhu">时柱</string>
+    <string name="ri_yuan">日元</string>
+    <string name="si_zhu">四柱</string>
+    <string name="shi_shen">十神</string>
+    <string name="ba_zi">八\n字</string>
+    <string name="cang_gan">藏干</string>
 </resources>

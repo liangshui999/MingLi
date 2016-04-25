@@ -1,5 +1,7 @@
 package com.example.asus_cp.mingli.util;
 
+import android.util.Log;
+
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -30,6 +32,8 @@ import java.util.Map;
  *
  */
 public class SolarTerm {
+    private String tag="SolarTerm";
+
     // ========角度变换===============
     private static final double rad = 180 * 3600 / Math.PI; // 每弧度的角秒数
     private static final double RAD = 180 / Math.PI; // 每弧度的角度数
@@ -618,17 +622,19 @@ public class SolarTerm {
     }
 
     /**
-     * 根据输入的时间返回月份数,调用方法的时候需要进行判断，如果返回的数值大于500，说明是上一年的月份
+     * 此方法主要用于返回正确的农历月份数，就是根据用户输入的公立月份，返回对应的农历月份
      * 2015-03-21 06:45:08  2015-03-21 06:46:16
      *
      * yyyy-MM-dd HH:mm:ss
      */
     public String getNongLiMonth(String year, String month, String day, String hour, String minute) {
         Map<Integer, String> jieQis = generateNoLiYear(year);
-        month = getStandardTime(month);
-        day = getStandardTime(day);
-        hour = getStandardTime(hour);
-        minute = getStandardTime(minute);
+        month = getStandardTime(Integer.parseInt(month));
+        day = getStandardTime(Integer.parseInt(day));
+        hour = getStandardTime(Integer.parseInt(hour));
+        minute = getStandardTime(Integer.parseInt(minute));
+
+        Log.d(tag,"直接在方法里面打印"+Integer.parseInt(month)+"");
         String second = "00";
         String space = " ";
         String dateString = year + "-" + month + "-" + day + space + hour + ":" + minute + ":" + second;
@@ -643,21 +649,23 @@ public class SolarTerm {
 
 //            getNongLiMonth(lastYea,month,day,hour,minute);//递归调用
             Map<Integer, String> jieQisLastYear = generateNoLiYear(Integer.parseInt(year) - 1 + "");
-            for (int i = 1; i < 13; i++) {
+            Calendar december=convertStringToCalendar(jieQisLastYear.get(12), pattern);
+            if(mCalendar.after(december)){  //在上一年的12月之后
+                return 12+"";
+            }
+            for (int i = 1; i <13; i++) {
                 jieQiCaledar = convertStringToCalendar(jieQisLastYear.get(i), pattern);
                 if (!mCalendar.after(jieQiCaledar)) {//在一月的后面可以这样计算
                     return i - 1 + "";
                 }
             }
-
-            //用户输入的时间在本农历年以内
-            for (int i = 1; i < 13; i++) {
-                jieQiCaledar = convertStringToCalendar(jieQis.get(i), pattern);
-                if (!mCalendar.after(jieQiCaledar)) {//在一月的后面可以这样计算
-                    return i - 1 + "";
-                }
+        }
+        //用户输入的时间在本农历年以内
+        for (int i = 1; i < 13; i++) {
+            jieQiCaledar = convertStringToCalendar(jieQis.get(i), pattern);
+            if (!mCalendar.after(jieQiCaledar)) {//在一月的后面可以这样计算
+                return i - 1 + "";
             }
-
         }
         return null;
     }
@@ -696,14 +704,15 @@ public class SolarTerm {
     }
 
     /**
+     * 根据用户输入的年分数返回对应的年分数
      * 年份计算,判断年份是否需要减1
      */
-    public String getYear(String year, String month, String day, String hour, String minute){
+    public String getNongLiYear(String year, String month, String day, String hour, String minute){
         Map<Integer, String> jieQis = generateNoLiYear(year);
-        month=getStandardTime(month);
-        day=getStandardTime(day);
-        hour=getStandardTime(hour);
-        minute=getStandardTime(minute);
+        month=getStandardTime(Integer.parseInt(month));
+        day=getStandardTime(Integer.parseInt(day));
+        hour=getStandardTime(Integer.parseInt(hour));
+        minute=getStandardTime(Integer.parseInt(minute));
         String second="00";
         String space=" ";
         String dateString=year+"-"+month+"-"+day+space+hour+":"+minute+":"+second;
@@ -739,12 +748,12 @@ public class SolarTerm {
      *如果输入的数小于10，就在前面加上0,比如输入的是8，则返回08
      *
      */
-    public String getStandardTime(String str){
-        int m=Integer.parseInt(str);
+    public String getStandardTime(int m){
+        Log.d(tag,"m="+m);
         if(m<10){
-            return "0"+str;
+            return "0"+m;
         }
-        return str;
+        return m+"";
     }
 
     // =================定朔弦望计算========================
