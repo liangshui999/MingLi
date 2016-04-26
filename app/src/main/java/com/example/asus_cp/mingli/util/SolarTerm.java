@@ -29,6 +29,7 @@ import java.util.Map;
  * @author lxslove
  * @mail moodlxs@163.com
  * 此类是从网上找出来的，作者是上面的人
+ * 此类后面的计算农历月份，计算农历年份的方法是我添上去的
  *
  */
 public class SolarTerm {
@@ -676,7 +677,7 @@ public class SolarTerm {
      * 计算农历完整一年的时间范围,从立春一直到大寒
      *
      */
-    private Map<Integer,String> generateNoLiYear(String year) {
+    public Map<Integer,String> generateNoLiYear(String year) {
         Map<Integer, String> jieQiss = new HashMap<Integer, String>();
         double jd = 365.2422 * (Integer.parseInt(year) - 2000);
         double q;

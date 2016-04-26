@@ -3,6 +3,115 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@mipmap/bg1">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:layout_margin="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/pre_ti_shi"
+            android:textSize="20sp"/>
+
+        <!--时间选择的wheelview -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:gravity="center">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/year"
+                    android:textSize="22sp"/>
+                <com.example.asus_cp.mingli.custumview.WheelView
+                    android:id="@+id/whe_year"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/month"
+                    android:textSize="22sp"/>
+                <com.example.asus_cp.mingli.custumview.WheelView
+                    android:id="@+id/whe_month"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/day"
+                    android:textSize="22sp"/>
+                <com.example.asus_cp.mingli.custumview.WheelView
+                    android:id="@+id/whe_day"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/hour"
+                    android:textSize="22sp"/>
+                <com.example.asus_cp.mingli.custumview.WheelView
+                    android:id="@+id/whe_hour"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/minute"
+                    android:textSize="22sp"/>
+                <com.example.asus_cp.mingli.custumview.WheelView
+                    android:id="@+id/whe_minute"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+
+
     <ScrollView
         android:id="@+id/scr_ming"
         android:layout_width="match_parent"
@@ -12,105 +121,31 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
-            <TextView
-                android:layout_margin="5dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/pre_ti_shi"
-                android:textSize="20sp"/>
 
-            <!--时间选择的wheelview -->
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:gravity="center">
-                <LinearLayout
-                    android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <RadioGroup
+                    android:id="@+id/radio_group"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical">
-                    <TextView
-                        android:layout_gravity="center"
+                    android:orientation="horizontal"
+                    android:gravity="center">
+                    <RadioButton
+                        android:id="@+id/radio_button_man"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/year"
-                        android:textSize="22sp"/>
-                    <com.example.asus_cp.mingli.custumview.WheelView
-                        android:id="@+id/whe_year"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
-                </LinearLayout>
-
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-                    <TextView
-                        android:layout_gravity="center"
+                        android:text="@string/man"
+                        android:textSize="20sp"
+                        android:checked="true"/>
+                    <RadioButton
+                        android:id="@+id/radio_button_woman"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/month"
-                        android:textSize="22sp"/>
-                    <com.example.asus_cp.mingli.custumview.WheelView
-                        android:id="@+id/whe_month"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
-                </LinearLayout>
-
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-                    <TextView
-                        android:layout_gravity="center"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/day"
-                        android:textSize="22sp"/>
-                    <com.example.asus_cp.mingli.custumview.WheelView
-                        android:id="@+id/whe_day"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
-                </LinearLayout>
-
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-                    <TextView
-                        android:layout_gravity="center"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/hour"
-                        android:textSize="22sp"/>
-                    <com.example.asus_cp.mingli.custumview.WheelView
-                        android:id="@+id/whe_hour"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
-                </LinearLayout>
-
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-                    <TextView
-                        android:layout_gravity="center"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/minute"
-                        android:textSize="22sp"/>
-                    <com.example.asus_cp.mingli.custumview.WheelView
-                        android:id="@+id/whe_minute"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
-
-                </LinearLayout>
+                        android:text="@string/woman"
+                        android:textSize="20sp"/>
+                </RadioGroup>
             </LinearLayout>
-
             <!-- 排八字的按钮所在的布局-->
             <LinearLayout
                 android:layout_width="match_parent"
@@ -341,8 +376,28 @@
                 </LinearLayout>
             </LinearLayout>
 
+
+            <!-- 八字解释所在的布局-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/ba_zi_jie_si"
+                    android:textSize="22sp"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/ba_zi_jie_si_content"
+                    android:textSize="20sp"/>
+
+            </LinearLayout>
         </LinearLayout>
 
     </ScrollView>
+
 
 </LinearLayout>
