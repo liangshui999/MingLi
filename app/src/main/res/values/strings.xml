@@ -30,4 +30,9 @@
         </string>
     <string name="man">男</string>
     <string name="woman">女</string>
+    <string name="da_yun">大运</string>
+    <string name="first_da_yun">第一次交大运的准确时间: </string>
+    <string name="da_yun_date">""</string>
+    <string name="da_yun_nian">""</string>
+    <string name="da_yun_gan_zhi">""</string>
 </resources>

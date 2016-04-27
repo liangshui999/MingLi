@@ -12,6 +12,7 @@ import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.asus_cp.mingli.R;
 import com.example.asus_cp.mingli.custumview.WheelView;
@@ -51,6 +52,7 @@ public class MingFragment extends Fragment implements View.OnClickListener {
     private TextView yueZhu;
     private TextView riZhu;
     private TextView shiZhu;
+    private TextView riYuan;
 
     private TextView textNianShiShen;//年的十神
     private TextView textYueShiShen;//月的十神
@@ -66,21 +68,74 @@ public class MingFragment extends Fragment implements View.OnClickListener {
 
     private View v;//碎片的布局view
 
+    private TextView textFirstDaYunDate;//第一次起大运的准确时间
+    private TextView textFirstDaYunNian;//第一次起大运的年份
+    private TextView textFirstDaYunGanZhi;//第一次起大运的干支
+
+    private TextView textSecondDaYunNian;//第二次起大运的年份
+    private TextView textSecondDaYunGanZhi;//第二次起大运的干支
+
+    private TextView textThirdDaYunNian;//第三次起大运的年份
+    private TextView textThirdDaYunGanZhi;//第三次起大运的干支
+
+    private TextView textFourDaYunNian;//第四次起大运的年份
+    private TextView textFourDaYunGanZhi;//第四次起大运的干支
+
+    private TextView textFiveDaYunNian;//第五次起大运的年份
+    private TextView textFiveDaYunGanZhi;//第五次起大运的干支
+
+    private TextView textSixDaYunNian;//第六次起大运的年份
+    private TextView textSixDaYunGanZhi;//第六次起大运的干支
+
+    private TextView textSevenDaYunNian;//第七次起大运的年份
+    private TextView textSevenDaYunGanZhi;//第七次起大运的干支
+
+    private TextView textEightDaYunNian;//第八次起大运的年份
+    private TextView textEightDaYunGanZhi;//第八次起大运的干支
+
+
 
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        init();
+        initData();
         context=getContext();
         v=View.inflate(getContext(), R.layout.ming_fragment_layout, null);
-//        Button date= (Button) v.findViewById(R.id.btn_date_piker);
-//        Button time= (Button) v.findViewById(R.id.btn_time_piker);
+        initView();
+        return v;
+
+    }
+
+    /**
+     * 初始化数据的方法
+     */
+    public void initData(){
+        years=new ArrayList<String>();
+        months=new ArrayList<String>();
+        days=new ArrayList<String>();
+        hours=new ArrayList<String>();
+        minutes=new ArrayList<String>();
+        fuZhi(years,200,firstYear);
+        fuZhi(months,12,firstExcepteYear);
+        fuZhi(days,31,firstExcepteYear);
+        fuZhi(hours,24,firstHourAndMinute);
+        fuZhi(minutes, 60, firstHourAndMinute);
+        caculateGanZhi=new CaculateGanZhi();
+    }
+
+    /**
+     * 初始化view的方法
+     */
+    public void initView(){
+//      Button date= (Button) v.findViewById(R.id.btn_date_piker);
+//      Button time= (Button) v.findViewById(R.id.btn_time_piker);
         paiBaZi= (Button) v.findViewById(R.id.btn_pai_bazi);
         nianZhu= (TextView) v.findViewById(R.id.text_nianzhu);
         yueZhu= (TextView) v.findViewById(R.id.text_yuezhu);
         riZhu= (TextView) v.findViewById(R.id.text_rizhu);
         shiZhu= (TextView) v.findViewById(R.id.text_shizhu);
+        riYuan= (TextView) v.findViewById(R.id.text_ri_yuan);
 
         textNianShiShen= (TextView) v.findViewById(R.id.text_nian_shi_shen);
         textYueShiShen= (TextView) v.findViewById(R.id.text_yue_shi_shen);
@@ -93,6 +148,33 @@ public class MingFragment extends Fragment implements View.OnClickListener {
 
         radioGroup= (RadioGroup) v.findViewById(R.id.radio_group);
         radioGroup.setOnCheckedChangeListener(new MyCheckedChangeLister());
+
+        textFirstDaYunDate= (TextView) v.findViewById(R.id.text_first_da_yun_date);
+        textFirstDaYunNian= (TextView) v.findViewById(R.id.text_first_da_yun_nian);
+        textFirstDaYunGanZhi= (TextView) v.findViewById(R.id.text_first_da_yun_gan_zhi);
+
+        textSecondDaYunNian= (TextView) v.findViewById(R.id.text_second_da_yun_nian);
+        textSecondDaYunGanZhi= (TextView) v.findViewById(R.id.text_second_da_yun_gan_zhi);
+
+        textThirdDaYunNian= (TextView) v.findViewById(R.id.text_third_da_yun_nian);
+        textThirdDaYunGanZhi= (TextView) v.findViewById(R.id.text_third_da_yun_gan_zhi);
+
+        textFourDaYunNian= (TextView) v.findViewById(R.id.text_four_da_yun_nian);
+        textFourDaYunGanZhi= (TextView) v.findViewById(R.id.text_four_da_yun_gan_zhi);
+
+        textFiveDaYunNian= (TextView) v.findViewById(R.id.text_five_da_yun_nian);
+        textFiveDaYunGanZhi= (TextView) v.findViewById(R.id.text_five_da_yun_gan_zhi);
+
+        textSixDaYunNian= (TextView) v.findViewById(R.id.text_six_da_yun_nian);
+        textSixDaYunGanZhi= (TextView) v.findViewById(R.id.text_six_da_yun_gan_zhi);
+
+        textSevenDaYunNian= (TextView) v.findViewById(R.id.text_seven_da_yun_nian);
+        textSevenDaYunGanZhi= (TextView) v.findViewById(R.id.text_seven_da_yun_gan_zhi);
+
+        textEightDaYunNian= (TextView) v.findViewById(R.id.text_eight_da_yun_nian);
+        textEightDaYunGanZhi= (TextView) v.findViewById(R.id.text_eight_da_yun_gan_zhi);
+
+
 
         WheelView wheelViewYear= (WheelView) v.findViewById(R.id.whe_year);
         WheelView wheelViewMonth= (WheelView) v.findViewById(R.id.whe_month);
@@ -157,26 +239,6 @@ public class MingFragment extends Fragment implements View.OnClickListener {
 //        date.setOnClickListener(this);
 //        time.setOnClickListener(this);
         paiBaZi.setOnClickListener(this);
-        return v;
-
-    }
-
-    /**
-     * 初始化的方法
-     */
-    public void init(){
-        years=new ArrayList<String>();
-        months=new ArrayList<String>();
-        days=new ArrayList<String>();
-        hours=new ArrayList<String>();
-        minutes=new ArrayList<String>();
-        fuZhi(years,200,firstYear);
-        fuZhi(months,12,firstExcepteYear);
-        fuZhi(days,31,firstExcepteYear);
-        fuZhi(hours,24,firstHourAndMinute);
-        fuZhi(minutes, 60, firstHourAndMinute);
-        caculateGanZhi=new CaculateGanZhi();
-
     }
 
     /**
@@ -223,6 +285,9 @@ public class MingFragment extends Fragment implements View.OnClickListener {
                 List<String> riZhiCangGan=caculateGanZhi.getDiZhiCangGan(riZhi);
                 List<String> shiZhiCangGan=caculateGanZhi.getDiZhiCangGan(shiZhi);
 
+                //让日元显示出来
+                riYuan.setVisibility(View.VISIBLE);
+
                 //给八字的四柱赋值
                 nianZhu.setText(convertBaZhiDirection(nianGanZhi));
                 yueZhu.setText(convertBaZhiDirection(yueGanZhi));
@@ -239,6 +304,40 @@ public class MingFragment extends Fragment implements View.OnClickListener {
                 textYueCangGan.setText(getCangGanFromList(yueZhiCangGan));
                 textRiCangGan.setText(getCangGanFromList(riZhiCangGan));
                 textShiCangGan.setText(getCangGanFromList(shiZhiCangGan));
+
+                //设置大运
+                if(radioButton==null){
+                    Toast.makeText(context,"请选择性别,有性别才能排出大运哦",Toast.LENGTH_LONG).show();
+                }else{
+                    List<String> daYuns= caculateGanZhi.getDaYun(year,month,day,hour,minute,radioButton.
+                            getText().toString());
+                    textFirstDaYunDate.setText(daYuns.get(0));
+                    textFirstDaYunNian.setText(daYuns.get(1));
+                    textFirstDaYunGanZhi.setText(daYuns.get(2));
+
+                    textSecondDaYunNian.setText(daYuns.get(3));
+                    textSecondDaYunGanZhi.setText(daYuns.get(4));
+
+                    textThirdDaYunNian.setText(daYuns.get(5));
+                    textThirdDaYunGanZhi.setText(daYuns.get(6));
+
+                    textFourDaYunNian.setText(daYuns.get(7));
+                    textFourDaYunGanZhi.setText(daYuns.get(8));
+
+                    textFiveDaYunNian.setText(daYuns.get(9));
+                    textFiveDaYunGanZhi.setText(daYuns.get(10));
+
+                    textSixDaYunNian.setText(daYuns.get(11));
+                    textSixDaYunGanZhi.setText(daYuns.get(12));
+
+                    textSevenDaYunNian.setText(daYuns.get(13));
+                    textSevenDaYunGanZhi.setText(daYuns.get(14));
+
+                    textEightDaYunNian.setText(daYuns.get(15));
+                    textEightDaYunGanZhi.setText(daYuns.get(16));
+                }
+
+
 
                 break;
 //            case R.id.btn_date_piker:

@@ -1,7 +1,9 @@
 package com.example.asus_cp.mingli.util;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -86,6 +88,8 @@ public class CaculateGanZhi {
 
     public static final String MAN="男";
     public static final String WOMEN="女";
+
+    public static final String FIRST_DA_YUN_DATE="firstDaYunDate";//第一步大运精准时间的key
 
     public CaculateGanZhi(){
         solarTerm=new SolarTerm();
@@ -644,8 +648,8 @@ public class CaculateGanZhi {
      * @param sex 性别,因为男女的大运排法正好是相反的
      * @return 几岁，什么大运
      */
-    public Map<String,String> getDaYun(String year,String month,String day,String hour,String minute,String sex){
-       Map<String,String>daYunMap=new HashMap<String,String>();
+    public List<String> getDaYun(String year,String month,String day,String hour,String minute,String sex){
+        List<String> daYuns=new ArrayList<String>();//装载大运的集合
 
         String nianGanZhi=getYearGanZhi(year, month, day, hour, minute);
         String nianGan=getTianGanFromGanZhi(nianGanZhi);
@@ -671,51 +675,121 @@ public class CaculateGanZhi {
 
         switch (sex){
             case MAN:
-                if(nianGan.equals(YANG)){   //顺行
-                    String nextBornYueJieQiString=nongliNianJieQi.get(Integer.parseInt(nongLiYue) + 1);
+                if(nianGanYinYang.equals(YANG)){   //顺行
+                    String nextBornYueJieQiString=null;
+                    if(Integer.parseInt(nongLiYue)==12){
+                        nongLiNian=Integer.parseInt(nongLiNian)+1+"";
+                        nongliNianJieQi=solarTerm.generateNoLiYear(nongLiNian);
+                        nextBornYueJieQiString=nongliNianJieQi.get(1);
+                    }else{
+                        nextBornYueJieQiString=nongliNianJieQi.get(Integer.parseInt(nongLiYue) + 1);
+                    }
                     Calendar nextBornJieQiCalendar=solarTerm.convertStringToCalendar(nextBornYueJieQiString, pattern);
-                    Calendar daYunCalendar=getQiDaYun(bornDateCalendar,nextBornJieQiCalendar);//交运的时间
-                    int daYunNian=daYunCalendar.YEAR;
-                    String daYunGanZhi=getYearGanZhi(daYunCalendar.YEAR+"",daYunCalendar.MONTH+1+"",
-                            daYunCalendar.DAY_OF_MONTH+"",daYunCalendar.HOUR_OF_DAY+"",daYunCalendar.MINUTE+""
-                    );
-                    daYunMap.clear();
-                    for(int i=0;i<8;i++){
-                        int index=getIndex(huaJia,daYunGanZhi);
-                        daYunMap.put(daYunNian+10*i+"",huaJia[index]);
+                    Calendar daYunCalendar= getFirstQiDaYun(bornDateCalendar, nextBornJieQiCalendar);//第一次大运的时间
+                    int daYunNian=daYunCalendar.get(Calendar.YEAR);
+                    String daYunGanZhi=getMonthGanZhi(year, month, day, hour, minute);
+                    daYuns.clear();
+                    daYuns.add(getStringFromCalendar(daYunCalendar,pattern));
+                    int index=getIndex(huaJia,daYunGanZhi);
+                    for(int i=0;i<8;i++){       //计算8步大运
                         index=index+1;
-                        if(index==60){
+                        if(index==60){      //避免角标越界
                             index=0;
                         }
+                        daYuns.add(daYunNian+10*i+"");
+                        daYuns.add(huaJia[index]);
                     }
+                    return daYuns;
 
 
                 }else{      //逆行
+                    String lastBornYueJieQiString=nongliNianJieQi.get(Integer.parseInt(nongLiYue));//出生的当月
+                    Calendar lastBornJieQiCalendar=solarTerm.convertStringToCalendar(lastBornYueJieQiString, pattern);
+                    Calendar daYunCalendar= getFirstQiDaYun(bornDateCalendar, lastBornJieQiCalendar);//第一次大运的时间
+                    int daYunNian=daYunCalendar.get(Calendar.YEAR);
+                    String daYunGanZhi=getMonthGanZhi(year, month, day, hour, minute);
+                    daYuns.clear();
+                    daYuns.add(getStringFromCalendar(daYunCalendar, pattern));
+                    int index=getIndex(huaJia,daYunGanZhi);
+                    for(int i=0;i<8;i++){       //计算8步大运
+                        index=index-1;
+                        if(index==0){      //避免角标越界
+                            index=60;
+                        }
+                        daYuns.add(daYunNian+10*i+"");
+                        daYuns.add(huaJia[index]);
+                    }
+                    return daYuns;
 
                 }
-                break;
+
             case WOMEN:
-                if(nianGan.equals(YIN)){   //顺行
+                if(nianGanYinYang.equals(YIN)){   //顺行
+                    String nextBornYueJieQiString=null;
+                    if(Integer.parseInt(nongLiYue)==12){
+                        nongLiNian=Integer.parseInt(nongLiNian)+1+"";
+                        nongliNianJieQi=solarTerm.generateNoLiYear(nongLiNian);
+                        nextBornYueJieQiString=nongliNianJieQi.get(1);
+                    }else{
+                        nextBornYueJieQiString=nongliNianJieQi.get(Integer.parseInt(nongLiYue) + 1);
+                    }
+                    Calendar nextBornJieQiCalendar=solarTerm.convertStringToCalendar(nextBornYueJieQiString, pattern);
+                    Calendar daYunCalendar= getFirstQiDaYun(bornDateCalendar, nextBornJieQiCalendar);//第一次大运的时间
+                    int daYunNian=daYunCalendar.get(Calendar.YEAR);
+                    String daYunGanZhi=getMonthGanZhi(year, month, day, hour, minute);
+                    daYuns.clear();
+                    daYuns.add(getStringFromCalendar(daYunCalendar, pattern));
+                    int index=getIndex(huaJia,daYunGanZhi);
+                    for(int i=0;i<8;i++){       //计算8步大运
+                        index=index+1;
+                        if(index==60){      //避免角标越界
+                            index=0;
+                        }
+                        daYuns.add(daYunNian+10*i+"");
+                        daYuns.add(huaJia[index]);
+                    }
+                    return daYuns;
 
                 }else{      //逆行
-
+                    String lastBornYueJieQiString=nongliNianJieQi.get(Integer.parseInt(nongLiYue));//出生的当月
+                    Calendar lastBornJieQiCalendar=solarTerm.convertStringToCalendar(lastBornYueJieQiString, pattern);
+                    Calendar daYunCalendar= getFirstQiDaYun(bornDateCalendar, lastBornJieQiCalendar);//第一次大运的时间
+                    int daYunNian=daYunCalendar.get(Calendar.YEAR);
+                    String daYunGanZhi=getMonthGanZhi(year, month, day, hour, minute);
+                    daYuns.clear();
+                    daYuns.add(getStringFromCalendar(daYunCalendar,pattern));
+                    int index=getIndex(huaJia,daYunGanZhi);
+                    for(int i=0;i<8;i++){       //计算8步大运
+                        index=index-1;
+                        if(index==0){      //避免角标越界
+                            index=60;
+                        }
+                        daYuns.add(daYunNian+10*i+ "");
+                        daYuns.add(huaJia[index]);
+                    }
+                    return daYuns;
                 }
-                break;
         }
         return null;
     }
 
     /**
-     *计算起大运的准确时间
+     *计算第一次起大运的准确时间
      */
-    public Calendar getQiDaYun(Calendar calendar1,Calendar calendar2){
+    public Calendar getFirstQiDaYun(Calendar calendar1, Calendar calendar2){
         Calendar calendar=Calendar.getInstance();
         long time=calendar1.getTimeInMillis()+Math.abs(calendar1.getTimeInMillis() - calendar2.getTimeInMillis())*120;
         calendar.setTimeInMillis(time);
         return calendar;
     }
 
-
-
+    /**
+     * 将calendar对象格式化成字符串
+     */
+    public String getStringFromCalendar(Calendar calendar,String pattern){
+        Date date=calendar.getTime();
+        SimpleDateFormat simpleDateFormat=new SimpleDateFormat(pattern);
+        return simpleDateFormat.format(date);
+    }
 
 }

@@ -114,7 +114,7 @@ public class WheelView extends ScrollView {
                 int newY = getScrollY();
                 if (initialY - newY == 0) { // stopped
                     final int remainder = initialY % itemHeight;
-                    final int divided = initialY / itemHeight;
+                    final int divided = initialY / itemHeight;//itemHeight就是每个textview的高度
 //                    Log.d(TAG, "initialY: " + initialY);
 //                    Log.d(TAG, "remainder: " + remainder + ", divided: " + divided);
                     if (remainder == 0) {
@@ -167,6 +167,10 @@ public class WheelView extends ScrollView {
         this.postDelayed(scrollerTask, newCheck);
     }
 
+    /**
+     * 初始化数据用，views就是一个linearlayout，因为scrollview里面只能有一个子布局，因此先往里面加一个linearlayout
+     * 其他的textview都放在这个linearlayout里面,初始化的时候就把所有的view添加到linearlayout里面去了
+     */
     private void initData() {
         displayItemCount = offset * 2 + 1;
 
@@ -180,7 +184,7 @@ public class WheelView extends ScrollView {
     int itemHeight = 0;
 
     /**
-     * 生成滚动中间的数字，比如年里面的1990，月里面的3等等
+     * 根据给定的字符串，动态生成一个textview
      * @param item
      * @return
      */
@@ -364,7 +368,7 @@ public class WheelView extends ScrollView {
     }
 
     /**
-     * 选中回调
+     * 选中回调,回调中将选中的编号，和选中的项目都返回了
      */
     private void onSeletedCallBack() {
         if (null != onWheelViewListener) {
