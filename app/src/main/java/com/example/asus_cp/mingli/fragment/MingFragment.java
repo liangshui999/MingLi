@@ -3,10 +3,12 @@ package com.example.asus_cp.mingli.fragment;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,6 +20,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.asus_cp.mingli.R;
+import com.example.asus_cp.mingli.Service.InsertDataService;
+import com.example.asus_cp.mingli.db.DBConstant;
+import com.example.asus_cp.mingli.db.DBCreateHelper;
+import com.example.asus_cp.mingli.db.DBOperateHelper;
 import com.example.asus_cp.mingli.util.CaculateGanZhi;
 
 import java.util.ArrayList;
@@ -42,6 +48,8 @@ public class MingFragment extends Fragment implements View.OnClickListener {
     private int firstYear=1950;//年的初始值
     private int firstExcepteYear=1;//除了年以外的，其他的初始值
     private int firstHourAndMinute=0;//小时和分钟的初始值
+    private DBOperateHelper helper;
+
 
 
     public static final int OFFSET=0;//控制时间区域的高度，有几行，如果等于2则上面有2行，下面有2行，总共是4行
@@ -108,11 +116,21 @@ public class MingFragment extends Fragment implements View.OnClickListener {
 
 
 
+    /**
+     * 向数据库中插入数据,开启服务，让服务去插入数据
+     */
+    public void insertData(){
+        helper=new DBOperateHelper(DBCreateHelper.getDBCreateHelper());
+        Intent intent=new Intent(context, InsertDataService.class);
+        context.startService(intent);
+    }
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         initData();
         context=getContext();
+        insertData();
         v=View.inflate(getContext(), R.layout.ming_fragment_layout, null);
         initView();
         return v;
@@ -355,6 +373,12 @@ public class MingFragment extends Fragment implements View.OnClickListener {
                     textEightDaYunNian.setText(daYuns.get(15));
                     textEightDaYunGanZhi.setText(daYuns.get(16));
                 }
+                String duanyu1=helper.queryQiongTongDuanYu(DBConstant.QiongTong.SELECT_DUAN_YU,
+                        new String[]{"甲","卯"});
+                String duanyu2=helper.querySanMingDuanYu(DBConstant.SanMing.SELECT_DUAN_YU,
+                        new String[]{"乙","辛"});
+                Log.d(tag,"duanyu1="+duanyu1);
+                Log.d(tag,"duanyu2"+duanyu2);
                 textBaZiJieSiContent.setVisibility(View.VISIBLE);
                 break;
             case R.id.img_btn_born_time://点击了选择出生时间的button，弹出一个对话框
