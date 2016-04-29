@@ -10,7 +10,7 @@
     <string name="day">日</string>
     <string name="hour">时</string>
     <string name="minute">分</string>
-    <string name="pre_ti_shi">请选择出生年月日（上下滑动即可选择）</string>
+    <string name="pre_ti_shi">请选择出生时间（上下滑动即可选择）</string>
     <string name="pai_ba_zi">排八字</string>
     <string name="nian_zhu">年柱</string>
     <string name="yue_zhu">月柱</string>
@@ -35,4 +35,6 @@
     <string name="da_yun_date">""</string>
     <string name="da_yun_nian">""</string>
     <string name="da_yun_gan_zhi">""</string>
+    <string name="born_time">出生时间:</string>
+    <string name="sex">性别：</string>
 </resources>

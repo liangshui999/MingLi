@@ -23,6 +23,8 @@ import java.util.List;
 
 /**
  * Created by asus-cp on 2016-04-22.
+ * 这个wheelview的效果不是特别好，所以选择放弃了，关键是不能跳到指定的位置，也不能循环
+ * 每次找年的时候都要从头找起，很不方便
  */
 public class WheelView extends ScrollView {
     public static final String TAG = WheelView.class.getSimpleName();

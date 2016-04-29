@@ -1,0 +1,26 @@
+[
+    {
+        "merged": "D:\\githubkaiyuan\\WheelDemo1\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\wheel_val.xml",
+        "source": "D:\\githubkaiyuan\\WheelDemo1\\app\\src\\main\\res\\drawable\\wheel_val.xml"
+    },
+    {
+        "merged": "D:\\githubkaiyuan\\WheelDemo1\\wheelLibariry\\build\\intermediates\\res\\merged\\debug\\drawable\\wheel_bg.xml",
+        "source": "D:\\githubkaiyuan\\WheelDemo1\\wheelLibariry\\src\\main\\res\\drawable\\wheel_bg.xml"
+    },
+    {
+        "merged": "D:\\githubkaiyuan\\WheelDemo1\\wheelLibariry\\build\\intermediates\\res\\merged\\debug\\drawable\\wheel_val.xml",
+        "source": "D:\\githubkaiyuan\\WheelDemo1\\wheelLibariry\\src\\main\\res\\drawable\\wheel_val.xml"
+    },
+    {
+        "merged": "D:\\githubkaiyuan\\WheelDemo1\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\layout_bg.xml",
+        "source": "D:\\githubkaiyuan\\WheelDemo1\\app\\src\\main\\res\\drawable\\layout_bg.xml"
+    },
+    {
+        "merged": "D:\\githubkaiyuan\\WheelDemo1\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\wheel_bg.xml",
+        "source": "D:\\githubkaiyuan\\WheelDemo1\\app\\src\\main\\res\\drawable\\wheel_bg.xml"
+    },
+    {
+        "merged": "D:\\githubkaiyuan\\WheelDemo1\\wheelLibariry\\build\\intermediates\\res\\merged\\debug\\drawable\\layout_bg.xml",
+        "source": "D:\\githubkaiyuan\\WheelDemo1\\wheelLibariry\\src\\main\\res\\drawable\\layout_bg.xml"
+    }
+]

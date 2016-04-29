@@ -1,25 +1,32 @@
 package com.example.asus_cp.mingli.fragment;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.asus_cp.mingli.R;
-import com.example.asus_cp.mingli.custumview.WheelView;
 import com.example.asus_cp.mingli.util.CaculateGanZhi;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
+
+import kankan.wheel.widget.OnWheelChangedListener;
+import kankan.wheel.widget.WheelView;
+import kankan.wheel.widget.adapters.NumericWheelAdapter;
 
 /**
  * Created by asus-cp on 2016-04-21.
@@ -41,8 +48,8 @@ public class MingFragment extends Fragment implements View.OnClickListener {
 
     private CaculateGanZhi caculateGanZhi;//工具类的对象
 
-    private String year=1950+"";//用户选择的年数据
-    private String month=1+"";//用户选择的月数据
+    private String year=1980+"";//用户选择的年数据
+    private String month=0+"";//用户选择的月数据
     private String day=1+"";//用户选择的日数据
     private String hour=0+"";//用户选择的时数据
     private String minute=0+"";//用户选择的分钟数据
@@ -92,6 +99,11 @@ public class MingFragment extends Fragment implements View.OnClickListener {
 
     private TextView textEightDaYunNian;//第八次起大运的年份
     private TextView textEightDaYunGanZhi;//第八次起大运的干支
+
+    private ImageButton imageButtonBornTime;//选择出生时间的点击按钮
+    private TextView textViewBornTime;//显示出生时间的textview
+
+    private TextView textBaZiJieSiContent;//八字解释的内容
 
 
 
@@ -174,9 +186,16 @@ public class MingFragment extends Fragment implements View.OnClickListener {
         textEightDaYunNian= (TextView) v.findViewById(R.id.text_eight_da_yun_nian);
         textEightDaYunGanZhi= (TextView) v.findViewById(R.id.text_eight_da_yun_gan_zhi);
 
+        imageButtonBornTime= (ImageButton) v.findViewById(R.id.img_btn_born_time);
+        textViewBornTime= (TextView) v.findViewById(R.id.text_born_time);
+
+        textBaZiJieSiContent= (TextView) v.findViewById(R.id.text_ba_zi_jie_si);
+
+        imageButtonBornTime.setOnClickListener(this);
 
 
-        WheelView wheelViewYear= (WheelView) v.findViewById(R.id.whe_year);
+
+      /*  WheelView wheelViewYear= (WheelView) v.findViewById(R.id.whe_year);
         WheelView wheelViewMonth= (WheelView) v.findViewById(R.id.whe_month);
         WheelView wheelViewDay= (WheelView) v.findViewById(R.id.whe_day);
         WheelView wheelViewHour= (WheelView) v.findViewById(R.id.whe_hour);
@@ -235,7 +254,7 @@ public class MingFragment extends Fragment implements View.OnClickListener {
                 minute=item.trim();//免得有空格之类的，到时候解析不出来
                 Log.d(tag, "selectedIndex: " + selectedIndex + ", item: " + item);
             }
-        });
+        });*/
 //        date.setOnClickListener(this);
 //        time.setOnClickListener(this);
         paiBaZi.setOnClickListener(this);
@@ -257,7 +276,7 @@ public class MingFragment extends Fragment implements View.OnClickListener {
     @Override
     public void onClick(View v) {
         switch (v.getId()){
-            case R.id.btn_pai_bazi:
+            case R.id.btn_pai_bazi: //点击了排八字的按钮
                 //求取年月日时的干支
                 String nianGanZhi=caculateGanZhi.getYearGanZhi(year, month, day, hour, minute);
                 String yueGanZhi=caculateGanZhi.getMonthGanZhi(year, month, day, hour, minute);
@@ -336,10 +355,101 @@ public class MingFragment extends Fragment implements View.OnClickListener {
                     textEightDaYunNian.setText(daYuns.get(15));
                     textEightDaYunGanZhi.setText(daYuns.get(16));
                 }
+                textBaZiJieSiContent.setVisibility(View.VISIBLE);
+                break;
+            case R.id.img_btn_born_time://点击了选择出生时间的button，弹出一个对话框
+                year=1980+"";//用户选择的年数据
+                month=1+"";//用户选择的月数据
+                day=1+"";//用户选择的日数据
+                hour=0+"";//用户选择的时数据
+                minute=0+"";//用户选择的分钟数据
+                AlertDialog.Builder builder=new AlertDialog.Builder(context);
+                LayoutInflater inflater=LayoutInflater.from(context);
+                View view=inflater.inflate(R.layout.date_picker_dialog_layout, null);
+                WheelView wheelViewYear= (WheelView) view.findViewById(R.id.whe_year);
+                WheelView wheelViewMonth= (WheelView) view.findViewById(R.id.whe_month);
+                WheelView wheelViewDay= (WheelView) view.findViewById(R.id.whe_day);
+                WheelView wheelViewHour= (WheelView) view.findViewById(R.id.whe_hour);
+                WheelView wheelViewMinute= (WheelView) view.findViewById(R.id.whe_minute);
+
+                OnWheelChangedListener listener=new OnWheelChangedListener() {
+                    @Override
+                    public void onChanged(WheelView wheel, int oldValue, int newValue) {
+                        switch (wheel.getId()){
+                            case R.id.whe_year:
+                                year=1920+newValue+"";
+                                break;
+                            case R.id.whe_month:
+                                month=1+newValue+"";
+                                break;
+                            case R.id.whe_day:
+                                day=1+newValue+"";
+                                break;
+                            case R.id.whe_hour:
+                                hour=newValue+"";
+                                break;
+                            case R.id.whe_minute:
+                                minute=newValue+"";
+                                break;
+                        }
+                    }
+                };
+
+                wheelViewYear.setViewAdapter(new MyWheelAdapter(context, 1920, 2100));
+                wheelViewYear.setCurrentItem(60);
+                wheelViewYear.setCyclic(true);
+                wheelViewYear.addChangingListener(listener);
+
+                wheelViewMonth.setViewAdapter(new MyWheelAdapter(context, 1, 12));
+                wheelViewMonth.setCurrentItem(0);
+                wheelViewMonth.setCyclic(true);
+                wheelViewMonth.addChangingListener(listener);
 
 
+
+                wheelViewDay.setViewAdapter(new MyWheelAdapter(context,1,31));
+                wheelViewDay.setCurrentItem(0);
+                wheelViewDay.setCyclic(true);
+                wheelViewDay.addChangingListener(listener);
+
+                wheelViewHour.setViewAdapter(new MyWheelAdapter(context,0,24));
+                wheelViewHour.setCurrentItem(0);
+                wheelViewHour.setCyclic(true);
+                wheelViewHour.addChangingListener(listener);
+
+                wheelViewMinute.setViewAdapter(new MyWheelAdapter(context,0,60));
+                wheelViewMinute.setCurrentItem(0);
+                wheelViewMinute.setCyclic(true);
+                wheelViewMinute.addChangingListener(listener);
+
+
+                builder.setView(view);
+                builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Calendar calendar1=Calendar.getInstance();
+                        calendar1.set(Integer.parseInt(year), Integer.parseInt(month)-1, Integer.parseInt(day),
+                                Integer.parseInt(hour), Integer.parseInt(minute),00);
+                        String pattern="yyyy-MM-dd HH:mm:ss";
+                        String bornDate=caculateGanZhi.getStringFromCalendar(calendar1,pattern);
+                        textViewBornTime.setText(bornDate);
+                    }
+                });
+                builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                    }
+                });
+                AlertDialog dialog=builder.create();
+                dialog.show();
 
                 break;
+
+
+
+
+
 //            case R.id.btn_date_piker:
 //                Calendar c = Calendar.getInstance();
 //                int year = c.get(Calendar.YEAR);
@@ -389,6 +499,30 @@ public class MingFragment extends Fragment implements View.OnClickListener {
         public void onCheckedChanged(RadioGroup group, int checkedId) {
             radioButton= (RadioButton) v.findViewById(checkedId);
         }
+    }
+
+    /**
+     * wheelview的适配器，继承自numerricwheelapter，不需要往里面传入数组，只需要传最大值，最小值即可
+     */
+    public class MyWheelAdapter extends NumericWheelAdapter{
+
+        /**
+         * Constructor
+         * @param minValue 传入的数字的最小值
+         * @param maxValue 传入的数字的最大值
+         *
+         */
+        public MyWheelAdapter(Context context, int minValue, int maxValue) {
+            super(context, minValue, maxValue);
+            setTextSize(24);
+        }
+
+        @Override
+        protected void configureTextView(TextView view) {
+            super.configureTextView(view);
+            view.setTypeface(Typeface.MONOSPACE);
+        }
+
     }
 
 

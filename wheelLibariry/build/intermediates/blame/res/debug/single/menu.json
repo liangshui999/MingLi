@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "D:\\githubkaiyuan\\WheelDemo1\\app\\build\\intermediates\\res\\merged\\debug\\menu\\main.xml",
+        "source": "D:\\githubkaiyuan\\WheelDemo1\\app\\src\\main\\res\\menu\\main.xml"
+    },
+    {
+        "merged": "D:\\githubkaiyuan\\WheelDemo1\\wheelLibariry\\build\\intermediates\\res\\merged\\debug\\menu\\main.xml",
+        "source": "D:\\githubkaiyuan\\WheelDemo1\\wheelLibariry\\src\\main\\res\\menu\\main.xml"
+    }
+]

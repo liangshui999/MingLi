@@ -3,6 +3,7 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@mipmap/bg1">
+    <!--
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -13,8 +14,10 @@
             android:layout_height="wrap_content"
             android:text="@string/pre_ti_shi"
             android:textSize="20sp"/>
+            -->
 
         <!--时间选择的wheelview -->
+        <!--
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -108,6 +111,7 @@
 
 
     </LinearLayout>
+    -->
 
 
 
@@ -121,29 +125,60 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/born_time"
+                    android:textSize="@dimen/base_font_size"
+                    android:layout_marginTop="25dp"/>
+                <TextView
+                    android:id="@+id/text_born_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="25dp"
+                    android:textSize="@dimen/base_font_size"/>
+                <ImageButton
+                    android:id="@+id/img_btn_born_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/calendar"/>
+
+            </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/sex"
+                    android:textSize="@dimen/base_font_size"
+                    android:layout_marginTop="3dp"
+                    />
                 <RadioGroup
                     android:id="@+id/radio_group"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
-                    android:gravity="center">
+                    android:gravity="left">
                     <RadioButton
                         android:id="@+id/radio_button_man"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/man"
-                        android:textSize="20sp"
+                        android:textSize="@dimen/base_font_size"
                         />
                     <RadioButton
                         android:id="@+id/radio_button_woman"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/woman"
-                        android:textSize="20sp"/>
+                        android:textSize="@dimen/base_font_size"/>
                 </RadioGroup>
             </LinearLayout>
             <!-- 排八字的按钮所在的布局-->
@@ -178,7 +213,7 @@
                         android:layout_height="wrap_content"
                         android:text="@string/si_zhu"
                         android:layout_gravity="center"
-                        android:textSize="20sp"
+                        android:textSize="16sp"
                         android:layout_marginBottom="3dp"
                         android:layout_marginTop="1dp"/>
                     <TextView
@@ -194,7 +229,7 @@
                         android:layout_height="wrap_content"
                         android:text="@string/ba_zi"
                         android:layout_gravity="center"
-                        android:textSize="20sp"
+                        android:textSize="16sp"
                         android:layout_marginBottom="3dp"
                         android:layout_marginTop="2sp"/>
                     <TextView
@@ -217,7 +252,7 @@
                         android:layout_height="match_parent"
                         android:gravity="center"
                         android:text="@string/nian_zhu"
-                        android:textSize="22sp"
+                        android:textSize="@dimen/base_font_size"
                         android:layout_marginBottom="10dp"
                         android:background="@color/dan_huang"/>
                     <TextView
@@ -235,7 +270,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
 
-                        android:textSize="22sp"
+                        android:textSize="@dimen/base_font_size"
                         android:textStyle="bold"
                         />
                     <TextView
@@ -260,7 +295,7 @@
                         android:layout_height="match_parent"
                         android:gravity="center"
                         android:text="@string/yue_zhu"
-                        android:textSize="22sp"
+                        android:textSize="@dimen/base_font_size"
                         android:layout_marginBottom="10dp"
                         android:background="@color/dan_huang"/>
                     <TextView
@@ -278,7 +313,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
 
-                        android:textSize="22sp"
+                        android:textSize="@dimen/base_font_size"
                         android:textStyle="bold"
                         />
                     <TextView
@@ -303,7 +338,7 @@
                         android:layout_height="match_parent"
                         android:gravity="center"
                         android:text="@string/ri_zhu"
-                        android:textSize="22sp"
+                        android:textSize="@dimen/base_font_size"
                         android:layout_marginBottom="10dp"
                         android:background="@color/dan_huang"/>
                     <TextView
@@ -322,7 +357,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
 
-                        android:textSize="22sp"
+                        android:textSize="@dimen/base_font_size"
                         android:textStyle="bold"
                         />
                     <TextView
@@ -346,7 +381,7 @@
                         android:layout_height="match_parent"
                         android:gravity="center"
                         android:text="@string/shi_zhu"
-                        android:textSize="22sp"
+                        android:textSize="@dimen/base_font_size"
                         android:layout_marginBottom="10dp"
                         android:background="@color/dan_huang"/>
                     <TextView
@@ -364,7 +399,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
 
-                        android:textSize="22sp"
+                        android:textSize="@dimen/base_font_size"
                         android:textStyle="bold"
                         />
                     <TextView
@@ -391,7 +426,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/da_yun"
-                    android:textSize="22sp"/>
+                    android:textSize="@dimen/base_font_size"/>
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content">
@@ -408,7 +443,8 @@
                 </LinearLayout>
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:background="@color/danlv">
                     <LinearLayout
                         android:layout_width="0dp"
                         android:layout_weight="1"
@@ -592,12 +628,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/ba_zi_jie_si"
-                    android:textSize="22sp"/>
+                    android:textSize="@dimen/base_font_size"/>
                 <TextView
+                    android:id="@+id/text_ba_zi_jie_si"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/ba_zi_jie_si_content"
-                    android:textSize="20sp"/>
+                    android:textSize="16sp"
+                    android:visibility="gone"/>
 
             </LinearLayout>
         </LinearLayout>
