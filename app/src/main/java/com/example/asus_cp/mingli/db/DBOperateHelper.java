@@ -5,6 +5,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
 
+import com.example.asus_cp.mingli.model.DiTianShui;
 import com.example.asus_cp.mingli.model.QiongTong;
 import com.example.asus_cp.mingli.model.SanMing;
 
@@ -25,7 +26,7 @@ public class DBOperateHelper {
         try{
             db=helper.getWritableDatabase();
             ContentValues contentValues=new ContentValues();
-            contentValues.put(DBConstant.SanMing.RI_GAN,sanMing.getRiGan());
+            contentValues.put(DBConstant.SanMing.RI_GAN,sanMing.getRiGanZhi());
             contentValues.put(DBConstant.SanMing.SHI_CHEN,sanMing.getShiChen());
             contentValues.put(DBConstant.SanMing.DUAN_YU,sanMing.getDuanYu());
             db.insert(DBConstant.SanMing.TABLE_NAME,null,contentValues);
@@ -50,6 +51,26 @@ public class DBOperateHelper {
             contentValues.put(DBConstant.QiongTong.YUE_FEN,qiongTong.getYueFen());
             contentValues.put(DBConstant.QiongTong.DUAN_YU,qiongTong.getDuanYu());
             db.insert(DBConstant.QiongTong.TABLE_NAME,null,contentValues);
+        }catch (SQLiteException e){
+            e.printStackTrace();
+        }finally {
+            if(db!=null){
+                db.close();
+            }
+        }
+    }
+
+    /**
+     * 向数据库中插入滴天髓的方法
+     */
+    public void insertDiTianShui(DiTianShui diTianShui){
+        SQLiteDatabase db=null;
+        try{
+            db=helper.getWritableDatabase();
+            ContentValues contentValues=new ContentValues();
+            contentValues.put(DBConstant.DiTianShui.RI_GAN,diTianShui.getRiGan());
+            contentValues.put(DBConstant.DiTianShui.DUAN_YU,diTianShui.getDuanYu());
+            db.insert(DBConstant.DiTianShui.TABLE_NAME,null,contentValues);
         }catch (SQLiteException e){
             e.printStackTrace();
         }finally {
@@ -110,6 +131,23 @@ public class DBOperateHelper {
                 String duanYu1=null;
                 if(cursor.moveToNext()){
                     duanYu1=cursor.getString(cursor.getColumnIndex(DBConstant.QiongTong.DUAN_YU));
+                }
+                return duanYu1;
+            }
+        });
+        return duanYu;
+    }
+
+    /**
+     * 查询滴天髓断语的方法
+     */
+    public String queryDiTianShui(String sql,String[] args){
+        String duanYu= (String) query(sql, args, new MyCursorHandler() {
+            @Override
+            public Object handleCursor(Cursor cursor) {
+                String duanYu1=null;
+                if(cursor.moveToNext()){
+                    duanYu1=cursor.getString(cursor.getColumnIndex(DBConstant.DiTianShui.DUAN_YU));
                 }
                 return duanYu1;
             }

@@ -5,12 +5,12 @@ package com.example.asus_cp.mingli.model;
  * 和三命通会表对应的断语
  */
 public class SanMing {
-    private String riGan;//日干
+    private String riGanZhi;//日干
     private String shiChen;//时辰
     private String duanYu;//断语
 
     public SanMing(String riGan, String shiChen, String duanYu) {
-        this.riGan = riGan;
+        this.riGanZhi = riGan;
         this.shiChen = shiChen;
         this.duanYu = duanYu;
     }
@@ -18,12 +18,12 @@ public class SanMing {
     public SanMing() {
     }
 
-    public String getRiGan() {
-        return riGan;
+    public String getRiGanZhi() {
+        return riGanZhi;
     }
 
-    public void setRiGan(String riGan) {
-        this.riGan = riGan;
+    public void setRiGanZhi(String riGanZhi) {
+        this.riGanZhi = riGanZhi;
     }
 
     public String getShiChen() {

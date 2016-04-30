@@ -19,7 +19,7 @@ public interface DBConstant {
                 "id integer primary key autoincrement ," +
                 RI_GAN+KONG_GE+"text not null," +
                 SHI_CHEN +KONG_GE+"text not null," +
-                DUAN_YU+KONG_GE+"text not null"+
+                DUAN_YU+KONG_GE+"text not null unique"+
                 ")";
 
         public static final String SELECT_DUAN_YU="select"+KONG_GE+DUAN_YU+KONG_GE+"from"+KONG_GE+TABLE_NAME+KONG_GE
@@ -38,10 +38,26 @@ public interface DBConstant {
                 "id integer primary key autoincrement ," +
                 RI_GAN+KONG_GE+"text not null," +
                 YUE_FEN +KONG_GE+"text not null," +
-                DUAN_YU+KONG_GE+"text not null"+
+                DUAN_YU+KONG_GE+"text not null unique"+
                 ")";
 
         public static final String SELECT_DUAN_YU="select"+KONG_GE+DUAN_YU+KONG_GE+"from"+KONG_GE+TABLE_NAME+KONG_GE+"where" +
                 KONG_GE+RI_GAN+"=? and"+KONG_GE+ YUE_FEN +"=?";
+    }
+
+    //滴天髓的表
+    public interface DiTianShui{
+        public static final String TABLE_NAME="diTianShui";
+        public static final String RI_GAN="riGan";
+        public static final String DUAN_YU="duanYu";
+
+        public static final String CREATE_TABLE="create table if not exists"+KONG_GE+TABLE_NAME+"(" +
+                "id integer primary key autoincrement ," +
+                RI_GAN+KONG_GE+"text not null," +
+                DUAN_YU+KONG_GE+"text not null unique"+
+                ")";
+
+        public static final String SELECT_DUAN_YU="select"+KONG_GE+DUAN_YU+KONG_GE+"from"+KONG_GE+TABLE_NAME+KONG_GE+"where" +
+                KONG_GE+RI_GAN+"=?";
     }
 }

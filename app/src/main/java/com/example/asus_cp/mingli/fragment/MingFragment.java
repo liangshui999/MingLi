@@ -8,7 +8,6 @@ import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -111,7 +110,10 @@ public class MingFragment extends Fragment implements View.OnClickListener {
     private ImageButton imageButtonBornTime;//选择出生时间的点击按钮
     private TextView textViewBornTime;//显示出生时间的textview
 
-    private TextView textBaZiJieSiContent;//八字解释的内容
+
+    private TextView textDiTianShui;//滴天髓解释的内容
+    private TextView textQiongTong;//穷通宝鉴解释的内容
+    private TextView textSanMing;//三命通会解释的内容
 
 
 
@@ -207,7 +209,11 @@ public class MingFragment extends Fragment implements View.OnClickListener {
         imageButtonBornTime= (ImageButton) v.findViewById(R.id.img_btn_born_time);
         textViewBornTime= (TextView) v.findViewById(R.id.text_born_time);
 
-        textBaZiJieSiContent= (TextView) v.findViewById(R.id.text_ba_zi_jie_si);
+        textDiTianShui= (TextView) v.findViewById(R.id.text_di_tian_shui);
+        textQiongTong= (TextView) v.findViewById(R.id.text_qiong_tong);
+        textSanMing= (TextView) v.findViewById(R.id.text_san_ming);
+
+
 
         imageButtonBornTime.setOnClickListener(this);
 
@@ -373,13 +379,17 @@ public class MingFragment extends Fragment implements View.OnClickListener {
                     textEightDaYunNian.setText(daYuns.get(15));
                     textEightDaYunGanZhi.setText(daYuns.get(16));
                 }
-                String duanyu1=helper.queryQiongTongDuanYu(DBConstant.QiongTong.SELECT_DUAN_YU,
-                        new String[]{"甲","卯"});
-                String duanyu2=helper.querySanMingDuanYu(DBConstant.SanMing.SELECT_DUAN_YU,
-                        new String[]{"乙","辛"});
-                Log.d(tag,"duanyu1="+duanyu1);
-                Log.d(tag,"duanyu2"+duanyu2);
-                textBaZiJieSiContent.setVisibility(View.VISIBLE);
+
+                //显示断命的结果
+                String diTianShui=helper.queryDiTianShui(DBConstant.DiTianShui.SELECT_DUAN_YU,new String[]{riGan});
+                String qiongTong=helper.queryQiongTongDuanYu(DBConstant.QiongTong.SELECT_DUAN_YU,
+                        new String[]{riGan, yueZhi});
+                String sanMing=helper.querySanMingDuanYu(DBConstant.SanMing.SELECT_DUAN_YU,
+                        new String[]{riGanZhi, shiZhi});
+                textDiTianShui.setText(diTianShui);
+                textQiongTong.setText(qiongTong);
+                textSanMing.setText(sanMing);
+
                 break;
             case R.id.img_btn_born_time://点击了选择出生时间的button，弹出一个对话框
                 year=1980+"";//用户选择的年数据

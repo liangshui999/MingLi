@@ -25,6 +25,7 @@ public class DBCreateHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(DBConstant.SanMing.CREATE_TABLE);
         db.execSQL(DBConstant.QiongTong.CREATE_TABLE);
+        db.execSQL(DBConstant.DiTianShui.CREATE_TABLE);
     }
 
     @Override

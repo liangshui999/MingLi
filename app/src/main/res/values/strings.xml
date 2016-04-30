@@ -37,4 +37,7 @@
     <string name="da_yun_gan_zhi">""</string>
     <string name="born_time">出生时间:</string>
     <string name="sex">性别：</string>
+    <string name="di_tian_shui">滴天髓论命：</string>
+    <string name="qiong_tong">穷通宝鉴论命：</string>
+    <string name="san_ming">三命通会论命：</string>
 </resources>
