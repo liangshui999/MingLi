@@ -134,7 +134,7 @@
                     android:layout_height="wrap_content"
                     android:text="@string/born_time"
                     android:textSize="@dimen/base_font_size"
-                    android:layout_marginTop="25dp"/>
+                    android:layout_marginTop="18dp"/>
                 <TextView
                     android:id="@+id/text_born_time"
                     android:layout_width="wrap_content"
@@ -145,7 +145,7 @@
                     android:id="@+id/img_btn_born_time"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/calendar"/>
+                    android:background="@drawable/calendar"/>
 
             </LinearLayout>
 
@@ -184,13 +184,14 @@
             <!-- 排八字的按钮所在的布局-->
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-                <Button
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <ImageButton
                     android:id="@+id/btn_pai_bazi"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/pai_ba_zi"
-                    android:textSize="22sp"/>
+                    android:layout_gravity="center"
+                    android:background="@mipmap/bagua1"/>
             </LinearLayout>
 
             <!-- 八字的内容所在的布局-->
@@ -633,7 +634,7 @@
                     android:id="@+id/text_di_tian_shui"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/ba_zi_jie_si_content"
+                   android:background="@color/danlv"
                     android:textSize="16sp"
                     />
 
@@ -654,7 +655,7 @@
                     android:id="@+id/text_qiong_tong"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/ba_zi_jie_si_content"
+                    android:background="@color/danlv"
                     android:textSize="16sp"
                     />
 
@@ -675,7 +676,7 @@
                     android:id="@+id/text_san_ming"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/ba_zi_jie_si_content"
+                    android:background="@color/danlv"
                     android:textSize="16sp"
                     />
 

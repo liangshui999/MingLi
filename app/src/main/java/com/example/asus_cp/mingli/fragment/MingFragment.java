@@ -4,6 +4,7 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -11,7 +12,8 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageButton;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -48,6 +50,10 @@ public class MingFragment extends Fragment implements View.OnClickListener {
     private int firstExcepteYear=1;//除了年以外的，其他的初始值
     private int firstHourAndMinute=0;//小时和分钟的初始值
     private DBOperateHelper helper;
+    public static final String SHARE_NAME="havingDate";
+    public static final String SHARE_KEY="dataKey";
+
+    public static final String KONG="";
 
 
 
@@ -61,7 +67,7 @@ public class MingFragment extends Fragment implements View.OnClickListener {
     private String hour=0+"";//用户选择的时数据
     private String minute=0+"";//用户选择的分钟数据
 
-    private Button paiBaZi;
+    private ImageButton paiBaZi;
     private TextView nianZhu;
     private TextView yueZhu;
     private TextView riZhu;
@@ -122,9 +128,16 @@ public class MingFragment extends Fragment implements View.OnClickListener {
      * 向数据库中插入数据,开启服务，让服务去插入数据
      */
     public void insertData(){
-        helper=new DBOperateHelper(DBCreateHelper.getDBCreateHelper());
-        Intent intent=new Intent(context, InsertDataService.class);
-        context.startService(intent);
+        SharedPreferences sharedPreferences=context.getSharedPreferences(SHARE_NAME, Context.MODE_PRIVATE);
+        int m=sharedPreferences.getInt(SHARE_KEY,-1);
+        if(m==-1){
+            SharedPreferences.Editor editor=sharedPreferences.edit();
+            editor.putInt(SHARE_KEY, 1);
+            editor.commit();
+            Intent intent=new Intent(context, InsertDataService.class);
+            context.startService(intent);
+        }
+
     }
 
     @Nullable
@@ -150,10 +163,11 @@ public class MingFragment extends Fragment implements View.OnClickListener {
         minutes=new ArrayList<String>();
         fuZhi(years,200,firstYear);
         fuZhi(months,12,firstExcepteYear);
-        fuZhi(days,31,firstExcepteYear);
+        fuZhi(days, 31, firstExcepteYear);
         fuZhi(hours,24,firstHourAndMinute);
         fuZhi(minutes, 60, firstHourAndMinute);
         caculateGanZhi=new CaculateGanZhi();
+        helper=new DBOperateHelper(DBCreateHelper.getDBCreateHelper());
     }
 
     /**
@@ -162,7 +176,7 @@ public class MingFragment extends Fragment implements View.OnClickListener {
     public void initView(){
 //      Button date= (Button) v.findViewById(R.id.btn_date_piker);
 //      Button time= (Button) v.findViewById(R.id.btn_time_piker);
-        paiBaZi= (Button) v.findViewById(R.id.btn_pai_bazi);
+        paiBaZi= (ImageButton) v.findViewById(R.id.btn_pai_bazi);
         nianZhu= (TextView) v.findViewById(R.id.text_nianzhu);
         yueZhu= (TextView) v.findViewById(R.id.text_yuezhu);
         riZhu= (TextView) v.findViewById(R.id.text_rizhu);
@@ -301,94 +315,112 @@ public class MingFragment extends Fragment implements View.OnClickListener {
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.btn_pai_bazi: //点击了排八字的按钮
-                //求取年月日时的干支
-                String nianGanZhi=caculateGanZhi.getYearGanZhi(year, month, day, hour, minute);
-                String yueGanZhi=caculateGanZhi.getMonthGanZhi(year, month, day, hour, minute);
-                String riGanZhi=caculateGanZhi.getRiGanZhi(year, month, day, hour);
-                String shiGanZhi=caculateGanZhi.getHourGanZhi(year, month, day, hour);
+                Animation rolate= AnimationUtils.loadAnimation(context,R.anim.ba_zi_button_anim);
+                rolate.setAnimationListener(new Animation.AnimationListener() {
+                    @Override
+                    public void onAnimationStart(Animation animation) {
+                        resetView();
+                    }
 
-                //求取年月日时的干和支
-                String nianGan=caculateGanZhi.getTianGanFromGanZhi(nianGanZhi);
-                String nianZhi=caculateGanZhi.getDiZhiFromGanZhi(nianGanZhi);
-                String yueGan=caculateGanZhi.getTianGanFromGanZhi(yueGanZhi);
-                String yueZhi=caculateGanZhi.getDiZhiFromGanZhi(yueGanZhi);
-                String riGan=caculateGanZhi.getTianGanFromGanZhi(riGanZhi);
-                String riZhi=caculateGanZhi.getDiZhiFromGanZhi(riGanZhi);
-                String shiGan=caculateGanZhi.getTianGanFromGanZhi(shiGanZhi);
-                String shiZhi=caculateGanZhi.getDiZhiFromGanZhi(shiGanZhi);
+                    @Override
+                    public void onAnimationEnd(Animation animation) {
+                        //求取年月日时的干支
+                        String nianGanZhi=caculateGanZhi.getYearGanZhi(year, month, day, hour, minute);
+                        String yueGanZhi=caculateGanZhi.getMonthGanZhi(year, month, day, hour, minute);
+                        String riGanZhi=caculateGanZhi.getRiGanZhi(year, month, day, hour);
+                        String shiGanZhi=caculateGanZhi.getHourGanZhi(year, month, day, hour);
 
-                //求年干，月干，时干的十神
-                String nianGanShiShen=caculateGanZhi.getRelationBetwwnGanZhi(nianGan, riGan);
-                String yueGanShiShen=caculateGanZhi.getRelationBetwwnGanZhi(yueGan,riGan);
-                String shiGanShiShen=caculateGanZhi.getRelationBetwwnGanZhi(shiGan,riGan);
+                        //求取年月日时的干和支
+                        String nianGan=caculateGanZhi.getTianGanFromGanZhi(nianGanZhi);
+                        String nianZhi=caculateGanZhi.getDiZhiFromGanZhi(nianGanZhi);
+                        String yueGan=caculateGanZhi.getTianGanFromGanZhi(yueGanZhi);
+                        String yueZhi=caculateGanZhi.getDiZhiFromGanZhi(yueGanZhi);
+                        String riGan=caculateGanZhi.getTianGanFromGanZhi(riGanZhi);
+                        String riZhi=caculateGanZhi.getDiZhiFromGanZhi(riGanZhi);
+                        String shiGan=caculateGanZhi.getTianGanFromGanZhi(shiGanZhi);
+                        String shiZhi=caculateGanZhi.getDiZhiFromGanZhi(shiGanZhi);
 
-                //求年支藏干，月支藏干，日支藏干，时支藏干
-                List<String> nianZhiCangGan=caculateGanZhi.getDiZhiCangGan(nianZhi);
-                List<String> yueZhiCangGan=caculateGanZhi.getDiZhiCangGan(yueZhi);
-                List<String> riZhiCangGan=caculateGanZhi.getDiZhiCangGan(riZhi);
-                List<String> shiZhiCangGan=caculateGanZhi.getDiZhiCangGan(shiZhi);
+                        //求年干，月干，时干的十神
+                        String nianGanShiShen=caculateGanZhi.getRelationBetwwnGanZhi(nianGan, riGan);
+                        String yueGanShiShen=caculateGanZhi.getRelationBetwwnGanZhi(yueGan,riGan);
+                        String shiGanShiShen=caculateGanZhi.getRelationBetwwnGanZhi(shiGan,riGan);
 
-                //让日元显示出来
-                riYuan.setVisibility(View.VISIBLE);
+                        //求年支藏干，月支藏干，日支藏干，时支藏干
+                        List<String> nianZhiCangGan=caculateGanZhi.getDiZhiCangGan(nianZhi);
+                        List<String> yueZhiCangGan=caculateGanZhi.getDiZhiCangGan(yueZhi);
+                        List<String> riZhiCangGan=caculateGanZhi.getDiZhiCangGan(riZhi);
+                        List<String> shiZhiCangGan=caculateGanZhi.getDiZhiCangGan(shiZhi);
 
-                //给八字的四柱赋值
-                nianZhu.setText(convertBaZhiDirection(nianGanZhi));
-                yueZhu.setText(convertBaZhiDirection(yueGanZhi));
-                riZhu.setText(convertBaZhiDirection(riGanZhi));
-                shiZhu.setText(convertBaZhiDirection(shiGanZhi));
+                        //让日元显示出来
+                        riYuan.setVisibility(View.VISIBLE);
 
-                //给天干十神赋值
-                textNianShiShen.setText(nianGanShiShen);
-                textYueShiShen.setText(yueGanShiShen);
-                textShiShiShen.setText(shiGanShiShen);
+                        //给八字的四柱赋值
+                        nianZhu.setText(convertBaZhiDirection(nianGanZhi));
+                        yueZhu.setText(convertBaZhiDirection(yueGanZhi));
+                        riZhu.setText(convertBaZhiDirection(riGanZhi));
+                        shiZhu.setText(convertBaZhiDirection(shiGanZhi));
 
-                //给地支藏干赋值
-                textNianCangGan.setText(getCangGanFromList(nianZhiCangGan));
-                textYueCangGan.setText(getCangGanFromList(yueZhiCangGan));
-                textRiCangGan.setText(getCangGanFromList(riZhiCangGan));
-                textShiCangGan.setText(getCangGanFromList(shiZhiCangGan));
+                        //给天干十神赋值
+                        textNianShiShen.setText(nianGanShiShen);
+                        textYueShiShen.setText(yueGanShiShen);
+                        textShiShiShen.setText(shiGanShiShen);
 
-                //设置大运
-                if(radioButton==null){
-                    Toast.makeText(context,"请选择性别,有性别才能排出大运哦",Toast.LENGTH_LONG).show();
-                }else{
-                    List<String> daYuns= caculateGanZhi.getDaYun(year,month,day,hour,minute,radioButton.
-                            getText().toString());
-                    textFirstDaYunDate.setText(daYuns.get(0));
-                    textFirstDaYunNian.setText(daYuns.get(1));
-                    textFirstDaYunGanZhi.setText(daYuns.get(2));
+                        //给地支藏干赋值
+                        textNianCangGan.setText(getCangGanFromList(nianZhiCangGan));
+                        textYueCangGan.setText(getCangGanFromList(yueZhiCangGan));
+                        textRiCangGan.setText(getCangGanFromList(riZhiCangGan));
+                        textShiCangGan.setText(getCangGanFromList(shiZhiCangGan));
 
-                    textSecondDaYunNian.setText(daYuns.get(3));
-                    textSecondDaYunGanZhi.setText(daYuns.get(4));
+                        //设置大运
+                        if(radioButton==null){
+                            Toast.makeText(context, "请选择性别,有性别才能排出大运哦", Toast.LENGTH_LONG).show();
+                        }else{
+                            List<String> daYuns= caculateGanZhi.getDaYun(year,month,day,hour,minute,radioButton.
+                                    getText().toString());
+                            textFirstDaYunDate.setText(daYuns.get(0));
+                            textFirstDaYunNian.setText(daYuns.get(1));
+                            textFirstDaYunGanZhi.setText(daYuns.get(2));
 
-                    textThirdDaYunNian.setText(daYuns.get(5));
-                    textThirdDaYunGanZhi.setText(daYuns.get(6));
+                            textSecondDaYunNian.setText(daYuns.get(3));
+                            textSecondDaYunGanZhi.setText(daYuns.get(4));
 
-                    textFourDaYunNian.setText(daYuns.get(7));
-                    textFourDaYunGanZhi.setText(daYuns.get(8));
+                            textThirdDaYunNian.setText(daYuns.get(5));
+                            textThirdDaYunGanZhi.setText(daYuns.get(6));
 
-                    textFiveDaYunNian.setText(daYuns.get(9));
-                    textFiveDaYunGanZhi.setText(daYuns.get(10));
+                            textFourDaYunNian.setText(daYuns.get(7));
+                            textFourDaYunGanZhi.setText(daYuns.get(8));
 
-                    textSixDaYunNian.setText(daYuns.get(11));
-                    textSixDaYunGanZhi.setText(daYuns.get(12));
+                            textFiveDaYunNian.setText(daYuns.get(9));
+                            textFiveDaYunGanZhi.setText(daYuns.get(10));
 
-                    textSevenDaYunNian.setText(daYuns.get(13));
-                    textSevenDaYunGanZhi.setText(daYuns.get(14));
+                            textSixDaYunNian.setText(daYuns.get(11));
+                            textSixDaYunGanZhi.setText(daYuns.get(12));
 
-                    textEightDaYunNian.setText(daYuns.get(15));
-                    textEightDaYunGanZhi.setText(daYuns.get(16));
-                }
+                            textSevenDaYunNian.setText(daYuns.get(13));
+                            textSevenDaYunGanZhi.setText(daYuns.get(14));
 
-                //显示断命的结果
-                String diTianShui=helper.queryDiTianShui(DBConstant.DiTianShui.SELECT_DUAN_YU,new String[]{riGan});
-                String qiongTong=helper.queryQiongTongDuanYu(DBConstant.QiongTong.SELECT_DUAN_YU,
-                        new String[]{riGan, yueZhi});
-                String sanMing=helper.querySanMingDuanYu(DBConstant.SanMing.SELECT_DUAN_YU,
-                        new String[]{riGanZhi, shiZhi});
-                textDiTianShui.setText(diTianShui);
-                textQiongTong.setText(qiongTong);
-                textSanMing.setText(sanMing);
+                            textEightDaYunNian.setText(daYuns.get(15));
+                            textEightDaYunGanZhi.setText(daYuns.get(16));
+                        }
+
+                        //显示断命的结果
+                        String diTianShui=helper.queryDiTianShui(DBConstant.DiTianShui.SELECT_DUAN_YU,new String[]{riGan});
+                        String qiongTong=helper.queryQiongTongDuanYu(DBConstant.QiongTong.SELECT_DUAN_YU,
+                                new String[]{riGan, yueZhi});
+                        String sanMing=helper.querySanMingDuanYu(DBConstant.SanMing.SELECT_DUAN_YU,
+                                new String[]{riGanZhi, shiZhi});
+                        textDiTianShui.setText(diTianShui);
+                        textQiongTong.setText(qiongTong);
+                        textSanMing.setText(sanMing);
+
+                    }
+
+                    @Override
+                    public void onAnimationRepeat(Animation animation) {
+
+                    }
+                });
+                paiBaZi.startAnimation(rolate);
 
                 break;
             case R.id.img_btn_born_time://点击了选择出生时间的button，弹出一个对话框
@@ -500,6 +532,54 @@ public class MingFragment extends Fragment implements View.OnClickListener {
 //                timePickerDialog.show();
 //                break;
         }
+    }
+
+    /**
+     * 将八字，大运设置为初始状态
+     */
+    public void resetView(){
+        riYuan.setVisibility(View.GONE);
+        //给八字的四柱赋值
+        nianZhu.setText(KONG);
+        yueZhu.setText(KONG);
+        riZhu.setText(KONG);
+        shiZhu.setText(KONG);
+
+        //给天干十神赋值
+        textNianShiShen.setText(KONG);
+        textYueShiShen.setText(KONG);
+        textShiShiShen.setText(KONG);
+
+        //给地支藏干赋值
+        textNianCangGan.setText(KONG);
+        textYueCangGan.setText(KONG);
+        textRiCangGan.setText(KONG);
+        textShiCangGan.setText(KONG);
+
+        textFirstDaYunDate.setText(KONG);
+        textFirstDaYunNian.setText(KONG);
+        textFirstDaYunGanZhi.setText(KONG);
+
+        textSecondDaYunNian.setText(KONG);
+        textSecondDaYunGanZhi.setText(KONG);
+
+        textThirdDaYunNian.setText(KONG);
+        textThirdDaYunGanZhi.setText(KONG);
+
+        textFourDaYunNian.setText(KONG);
+        textFourDaYunGanZhi.setText(KONG);
+
+        textFiveDaYunNian.setText(KONG);
+        textFiveDaYunGanZhi.setText(KONG);
+
+        textSixDaYunNian.setText(KONG);
+        textSixDaYunGanZhi.setText(KONG);
+
+        textSevenDaYunNian.setText(KONG);
+        textSevenDaYunGanZhi.setText(KONG);
+
+        textEightDaYunNian.setText(KONG);
+        textEightDaYunGanZhi.setText(KONG);
     }
 
     /**

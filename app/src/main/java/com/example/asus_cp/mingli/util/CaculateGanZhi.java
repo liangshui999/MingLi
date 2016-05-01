@@ -294,22 +294,42 @@ public class CaculateGanZhi {
         int oneMonthIndex=0;
         if(yearTianGan.equals("甲")||yearTianGan.equals("己")){
             oneMonthIndex=getIndex(huaJia,"丙寅");
-            return huaJia[oneMonthIndex+dif];
+            int index=oneMonthIndex+dif;
+            if(index>59){
+                index=index-60;
+            }
+            return huaJia[index];
         }else if(yearTianGan.equals("乙")||yearTianGan.equals("庚")){
             oneMonthIndex=getIndex(huaJia,"戊寅");
-            return huaJia[oneMonthIndex+dif];
+            int index=oneMonthIndex+dif;
+            if(index>59){
+                index=index-60;
+            }
+            return huaJia[index];
         }
         else if(yearTianGan.equals("丙")||yearTianGan.equals("辛")){
             oneMonthIndex=getIndex(huaJia,"庚寅");
-            return huaJia[oneMonthIndex+dif];
+            int index=oneMonthIndex+dif;
+            if(index>59){
+                index=index-60;
+            }
+            return huaJia[index];
         }
         else if(yearTianGan.equals("丁")||yearTianGan.equals("壬")){
             oneMonthIndex=getIndex(huaJia,"壬寅");
-            return huaJia[oneMonthIndex+dif];
+            int index=oneMonthIndex+dif;
+            if(index>59){
+                index=index-60;
+            }
+            return huaJia[index];
         }
         else if(yearTianGan.equals("戊")||yearTianGan.equals("癸")){
             oneMonthIndex=getIndex(huaJia,"甲寅");
-            return huaJia[oneMonthIndex+dif];
+            int index=oneMonthIndex+dif;
+            if(index>59){
+                index=index-60;
+            }
+            return huaJia[index];
         }
         return null;
     }
@@ -431,22 +451,42 @@ public class CaculateGanZhi {
         int firstIndex=0;
         if(riGan.equals("甲")||riGan.equals("己")){
             firstIndex=getIndex(huaJia,"甲子");
-            return huaJia[firstIndex+dif];
+            int index=firstIndex+dif;
+            if(index>59){
+                index=index-60;
+            }
+            return huaJia[index];
         }else if(riGan.equals("乙")||riGan.equals("庚")){
             firstIndex=getIndex(huaJia,"丙子");
-            return huaJia[firstIndex+dif];
+            int index=firstIndex+dif;
+            if(index>59){
+                index=index-60;
+            }
+            return huaJia[index];
         }
         else if(riGan.equals("丙")||riGan.equals("辛")){
             firstIndex=getIndex(huaJia,"戊子");
-            return huaJia[firstIndex+dif];
+            int index=firstIndex+dif;
+            if(index>59){
+                index=index-60;
+            }
+            return huaJia[index];
         }
         else if(riGan.equals("丁")||riGan.equals("壬")){
             firstIndex=getIndex(huaJia,"庚子");
-            return huaJia[firstIndex+dif];
+            int index=firstIndex+dif;
+            if(index>59){
+                index=index-60;
+            }
+            return huaJia[index];
         }
         else if(riGan.equals("戊")||riGan.equals("癸")){
             firstIndex=getIndex(huaJia,"壬子");
-            return huaJia[firstIndex+dif];
+            int index=firstIndex+dif;
+            if(index>59){
+                index=index-60;
+            }
+            return huaJia[index];
         }
         return null;
     }
@@ -713,8 +753,8 @@ public class CaculateGanZhi {
                     int index=getIndex(huaJia,daYunGanZhi);
                     for(int i=0;i<8;i++){       //计算8步大运
                         index=index-1;
-                        if(index==0){      //避免角标越界
-                            index=60;
+                        if(index==-1){      //避免角标越界
+                            index=59;
                         }
                         daYuns.add(daYunNian+10*i+"");
                         daYuns.add(huaJia[index]);
@@ -761,8 +801,8 @@ public class CaculateGanZhi {
                     int index=getIndex(huaJia,daYunGanZhi);
                     for(int i=0;i<8;i++){       //计算8步大运
                         index=index-1;
-                        if(index==0){      //避免角标越界
-                            index=60;
+                        if(index==-1){      //避免角标越界
+                            index=59;
                         }
                         daYuns.add(daYunNian+10*i+ "");
                         daYuns.add(huaJia[index]);
