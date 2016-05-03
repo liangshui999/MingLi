@@ -6,4 +6,5 @@
     <dimen name="main_layout_margin">5dp</dimen>
     <dimen name="top_bar_height">50dp</dimen>
     <dimen name="base_font_size">18sp</dimen>
+    <dimen name="main_activity_base_size">24sp</dimen>
 </resources>

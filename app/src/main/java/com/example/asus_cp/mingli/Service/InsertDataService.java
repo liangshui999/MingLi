@@ -2,9 +2,11 @@ package com.example.asus_cp.mingli.Service;
 
 import android.app.IntentService;
 import android.content.Intent;
+import android.content.SharedPreferences;
 
 import com.example.asus_cp.mingli.db.DBCreateHelper;
 import com.example.asus_cp.mingli.db.DBOperateHelper;
+import com.example.asus_cp.mingli.fragment.MingFragment;
 import com.example.asus_cp.mingli.model.DiTianShui;
 import com.example.asus_cp.mingli.model.QiongTong;
 import com.example.asus_cp.mingli.model.SanMing;
@@ -2882,55 +2884,13 @@ public class InsertDataService extends IntentService {
 
 
 
+        //所有数据插入完毕后才关闭数据库
+        helper.closeDB();
+        //所有数据插入完毕以后才向sharedPreferences里面插入值
+        SharedPreferences sharedPreferences=this.getSharedPreferences(MingFragment.SHARE_NAME,MODE_PRIVATE);
+        SharedPreferences.Editor editor=sharedPreferences.edit();
+        editor.putInt(MingFragment.SHARE_KEY,1);
+        editor.apply();
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        qiongTong.setRiGan("甲");
-        qiongTong.setYueFen("寅");
-        qiongTong.setDuanYu("果断是一条好命");
-        helper.insertQiongTong(qiongTong);
-        qiongTong.setRiGan("甲");
-        qiongTong.setYueFen("卯");
-        qiongTong.setDuanYu("烂命一条");
-        helper.insertQiongTong(qiongTong);
-
-        sanMing.setRiGanZhi("乙");
-        sanMing.setShiChen("庚");
-        sanMing.setDuanYu("乙的命格不靠谱");
-        helper.insertSanMing(sanMing);
-
-        sanMing.setRiGanZhi("癸亥");
-        sanMing.setShiChen("亥");
-        sanMing.setDuanYu("最后一条数据");
-        helper.insertSanMing(sanMing);
     }
 }

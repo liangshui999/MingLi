@@ -57,6 +57,7 @@ public class MingFragment extends Fragment implements View.OnClickListener {
 
 
 
+
     public static final int OFFSET=0;//控制时间区域的高度，有几行，如果等于2则上面有2行，下面有2行，总共是4行
 
     private CaculateGanZhi caculateGanZhi;//工具类的对象
@@ -124,6 +125,8 @@ public class MingFragment extends Fragment implements View.OnClickListener {
 
 
 
+
+
     /**
      * 向数据库中插入数据,开启服务，让服务去插入数据
      */
@@ -131,9 +134,6 @@ public class MingFragment extends Fragment implements View.OnClickListener {
         SharedPreferences sharedPreferences=context.getSharedPreferences(SHARE_NAME, Context.MODE_PRIVATE);
         int m=sharedPreferences.getInt(SHARE_KEY,-1);
         if(m==-1){
-            SharedPreferences.Editor editor=sharedPreferences.edit();
-            editor.putInt(SHARE_KEY, 1);
-            editor.commit();
             Intent intent=new Intent(context, InsertDataService.class);
             context.startService(intent);
         }
@@ -226,6 +226,8 @@ public class MingFragment extends Fragment implements View.OnClickListener {
         textDiTianShui= (TextView) v.findViewById(R.id.text_di_tian_shui);
         textQiongTong= (TextView) v.findViewById(R.id.text_qiong_tong);
         textSanMing= (TextView) v.findViewById(R.id.text_san_ming);
+
+
 
 
 
@@ -412,6 +414,13 @@ public class MingFragment extends Fragment implements View.OnClickListener {
                         textDiTianShui.setText(diTianShui);
                         textQiongTong.setText(qiongTong);
                         textSanMing.setText(sanMing);
+
+                        //查询完毕之后关闭数据库
+                        SharedPreferences sharedPreferences=context.getSharedPreferences(SHARE_NAME, Context.MODE_PRIVATE);
+                        int m=sharedPreferences.getInt(SHARE_KEY,-1);
+                        if(m!=-1){
+                            helper.closeDB();
+                        }
 
                     }
 

@@ -3,6 +3,27 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
     >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        >
+        <ImageButton
+            android:id="@+id/img_btn_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/back"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="5dp"/>
+        <ImageButton
+            android:id="@+id/img_btn_share"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/share"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="5dp"/>
+
+    </RelativeLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -13,7 +34,6 @@
             android:layout_weight="1"
             android:layout_height="@dimen/top_bar_height"
             android:orientation="vertical"
-            android:layout_marginTop="5dp"
             android:background="@color/gray"
             android:clickable="true"
             android:focusable="true">
@@ -21,8 +41,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:layout_marginTop="12dp"
                 android:text="@string/ming"
-                android:textSize="30sp"
+                android:textSize="@dimen/main_activity_base_size"
 
                 android:clickable="false"
                 />
@@ -33,7 +54,7 @@
             android:layout_weight="1"
             android:layout_height="@dimen/top_bar_height"
             android:orientation="vertical"
-            android:layout_marginTop="5dp"
+
             android:background="@color/gray"
             android:clickable="true"
             android:focusable="true">
@@ -41,8 +62,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:layout_marginTop="12dp"
                 android:text="@string/yun"
-                android:textSize="30sp"
+                android:textSize="@dimen/main_activity_base_size"
 
                 android:clickable="false"/>
         </LinearLayout>
@@ -52,7 +74,6 @@
             android:layout_weight="1"
             android:layout_height="@dimen/top_bar_height"
             android:orientation="vertical"
-            android:layout_marginTop="5dp"
             android:background="@color/gray"
             android:clickable="true"
             android:focusable="true">
@@ -61,17 +82,19 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:text="@string/book"
-                android:textSize="30sp"
+                android:layout_marginTop="12dp"
+                android:textSize="@dimen/main_activity_base_size"
 
                 android:clickable="false"/>
         </LinearLayout>
+
+        <!--
         <LinearLayout
             android:id="@+id/ll_record"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="@dimen/top_bar_height"
             android:orientation="vertical"
-            android:layout_marginTop="5dp"
             android:background="@color/gray"
             android:clickable="true"
             android:focusable="true">
@@ -84,6 +107,7 @@
 
                 android:clickable="false"/>
         </LinearLayout>
+        -->
     </LinearLayout>
     
     <LinearLayout

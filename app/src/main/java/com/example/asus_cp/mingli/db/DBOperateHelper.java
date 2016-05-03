@@ -34,7 +34,7 @@ public class DBOperateHelper {
             e.printStackTrace();
         }finally {
             if(db!=null){
-                db.close();
+//                db.close();
             }
         }
     }
@@ -55,7 +55,7 @@ public class DBOperateHelper {
             e.printStackTrace();
         }finally {
             if(db!=null){
-                db.close();
+//                db.close();
             }
         }
     }
@@ -75,7 +75,7 @@ public class DBOperateHelper {
             e.printStackTrace();
         }finally {
             if(db!=null){
-                db.close();
+//                db.close();
             }
         }
     }
@@ -98,7 +98,7 @@ public class DBOperateHelper {
                 cursor.close();
             }
             if(db!=null){
-                db.close();
+//                db.close();
             }
         }
         return obj;
@@ -153,5 +153,22 @@ public class DBOperateHelper {
             }
         });
         return duanYu;
+    }
+
+    /**
+     * 关闭数据库的方法
+     */
+    public void closeDB(){
+        SQLiteDatabase db=null;
+        try{
+            db=helper.getWritableDatabase();
+        }catch (SQLiteException e){
+            e.printStackTrace();
+        }finally {
+            if(db!=null){
+                db.close();
+            }
+        }
+
     }
 }
