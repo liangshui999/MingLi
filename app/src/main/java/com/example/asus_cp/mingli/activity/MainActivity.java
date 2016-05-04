@@ -1,5 +1,6 @@
 package com.example.asus_cp.mingli.activity;
 
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Point;
@@ -12,6 +13,7 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.util.Log;
 import android.view.Display;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.ImageButton;
@@ -38,7 +40,7 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
     private LinearLayout llRecord;
     private ViewPager viewPagerMain;
     private ImageButton shareButton;
-    private ImageButton backButton;
+    private ImageButton helpButton;
 
 
 
@@ -70,9 +72,9 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
 //        llRecord= (LinearLayout) findViewById(R.id.ll_record);
         viewPagerMain= (ViewPager) findViewById(R.id.view_pager_main);
         shareButton= (ImageButton) findViewById(R.id.img_btn_share);
-        backButton= (ImageButton) findViewById(R.id.img_btn_back);
+        helpButton= (ImageButton) findViewById(R.id.img_btn_help);
         shareButton.setOnClickListener(this);
-        backButton.setOnClickListener(this);
+        helpButton.setOnClickListener(this);
 
 
         llMing.setBackgroundResource(R.color.blue);
@@ -176,13 +178,22 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
                 getCurrentImage();
                 File file=new File(Environment.getExternalStorageDirectory(),"1.jpg");
                 Uri uri=Uri.fromFile(file);
+                Log.d(tag, uri.toString());
                 Intent intent=new Intent();
-                intent.setAction(Intent.ACTION_SEND_MULTIPLE);
-                intent.putExtra("tupian", uri);
+                intent.setAction(Intent.ACTION_SEND);
+                intent.putExtra(Intent.EXTRA_STREAM, uri);//注意这里的键值不是自己乱写的
                 intent.setType("image/*");
                 startActivity(Intent.createChooser(intent, "分享到"));
                 break;
-            case R.id.img_btn_back:     //返回按钮的点击事件
+            case R.id.img_btn_help:     //帮助按钮的点击事件
+                AlertDialog.Builder builder=new AlertDialog.Builder(this);
+                builder.setTitle("帮助");
+                LayoutInflater inflater=LayoutInflater.from(this);
+                View helpView=inflater.inflate(R.layout.help_dialog_layout, null);
+                builder.setView(helpView);
+                AlertDialog helpDialog=builder.show();
+                helpDialog.show();
+
                 break;
         }
     }
@@ -203,8 +214,11 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
         decorview.setDrawingCacheEnabled(true);
         bmp = decorview.getDrawingCache();
         OutputStream out=null;
-        File file=new File(Environment.getExternalStorageDirectory(),"1.txt");
-        if(!file.exists()){
+        File file=new File(Environment.getExternalStorageDirectory(),"1.jpg");//这里需要申请权限的
+        if(file.exists()){  //如果存在就删除
+            file.delete();
+        }
+        if(!file.exists()){ //如果不存在就创造出来
             try {
                 file.createNewFile();
             } catch (IOException e) {

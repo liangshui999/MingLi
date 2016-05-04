@@ -9,19 +9,19 @@
         android:background="@color/colorPrimary"
         >
         <ImageButton
-            android:id="@+id/img_btn_back"
+            android:id="@+id/img_btn_help"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/back"
-            android:layout_alignParentLeft="true"
-            android:layout_marginLeft="5dp"/>
+            android:background="@drawable/help"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="5dp"/>
         <ImageButton
             android:id="@+id/img_btn_share"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/share"
-            android:layout_alignParentRight="true"
-            android:layout_marginRight="5dp"/>
+            android:layout_toLeftOf="@id/img_btn_help"
+            android:layout_marginRight="10dp"/>
 
     </RelativeLayout>
     <LinearLayout

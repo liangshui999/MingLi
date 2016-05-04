@@ -2880,6 +2880,1065 @@ public class InsertDataService extends IntentService {
         helper.insertSanMing(sanMing);
 
 
+        //庚子日子时
+        sanMing.setRiGanZhi(GENG_ZI);
+        sanMing.setShiChen(CaculateGanZhi.ZI);
+        sanMing.setDuanYu("庚子日丙子时，贵。年月再子，并冲，午中丁为官，己为印，" +
+                "人飞天禄马格；柱无财官填实，主贵；为僧道，一尘不染，万法皆成；为常人，有名有利，刑伤妻子。一说先贫后富。" +
+                "忌己巳月，破刑，贫。癸未月，孤单。巳亥月、刑。");
+        helper.insertSanMing(sanMing);
+
+
+        //庚寅日子时
+        sanMing.setRiGanZhi(GENG_YIN);
+        sanMing.setShiChen(CaculateGanZhi.ZI);
+        sanMing.setDuanYu("庚寅日丙子时，春生，带财带煞，行金水运，金紫。夏，煞旺，大贵。秋，身旺，须行南运，贵。冬，身鬼俱弱，平常。" +
+                " 纯午年月，位至公卿。壬子，食前煞后随；一阳生后，丙火有气，贵极人臣。忌癸酉月，破败，凶。辛亥月，血光。" +
+                "甲子月，夭。");
+        helper.insertSanMing(sanMing);
+
+
+        //庚辰日子时
+        sanMing.setRiGanZhi(GENG_CHEN);
+        sanMing.setShiChen(CaculateGanZhi.ZI);
+        sanMing.setDuanYu("庚辰日丙子时，月通木火气，行西运，妙。乙巳月，破败，刑。丁酉月，旺中刑，凶。己丑月，破败，凶。");
+        helper.insertSanMing(sanMing);
+
+
+        //庚午日子时
+        sanMing.setRiGanZhi(GENG_WU);
+        sanMing.setShiChen(CaculateGanZhi.ZI);
+        sanMing.setDuanYu("庚午日丙子时，贵。时日相冲，忧伤妻子，运喜西南，通火木月气，风宪三四品。秋生，丙火无气，难为子息。" +
+                "忌己巳月，破祖，凶。己亥月，被劫盗，凶。癸丑月，孤。");
+        helper.insertSanMing(sanMing);
+
+
+        //庚申日子时
+        sanMing.setRiGanZhi(GENG_SHEN);
+        sanMing.setShiChen(CaculateGanZhi.ZI);
+        sanMing.setDuanYu("庚申日丙子时，申月，生土厚地方，贵。辰未年月，行西运金，方吉。辛巳月，凶刑。辛亥月，孤夭。");
+        helper.insertSanMing(sanMing);
+
+
+        //庚戌日子时
+        sanMing.setRiGanZhi(GENG_XU);
+        sanMing.setShiChen(CaculateGanZhi.ZI);
+        sanMing.setDuanYu("庚戌日丙子时，春夏生。西南运；秋月、木火运，俱贵。忌乙巳月，凶、破。乙亥月，官灾多，凶刑。" +
+                "己丑月，破败，凶。戊戌月，恶死。");
+        helper.insertSanMing(sanMing);
+
+
+        //庚子日丑时
+        sanMing.setRiGanZhi(GENG_ZI);
+        sanMing.setShiChen(CaculateGanZhi.CHOU);
+        sanMing.setDuanYu("庚子日丁丑时，春夏，贵；秋平常；冬孤克。");
+        helper.insertSanMing(sanMing);
+
+
+        //庚寅日丑时
+        sanMing.setRiGanZhi(GENG_YIN);
+        sanMing.setShiChen(CaculateGanZhi.CHOU);
+        sanMing.setDuanYu("庚寅日丁丑时，魁元。寅卯午未亥月，清秀高命。行午、未运，贵显。通火土年月，贵。");
+        helper.insertSanMing(sanMing);
+
+
+        //庚辰日丑时
+        sanMing.setRiGanZhi(GENG_CHEN);
+        sanMing.setShiChen(CaculateGanZhi.CHOU);
+        sanMing.setDuanYu("庚辰日丁丑时，丑月，富而寿促。己，近侍，大贵。通火旺土生月，贵；不得，运遇亦富，有名誉。");
+        helper.insertSanMing(sanMing);
+
+
+        //庚午日丑时
+        sanMing.setRiGanZhi(GENG_WU);
+        sanMing.setShiChen(CaculateGanZhi.CHOU);
+        sanMing.setDuanYu("庚午日丁丑时，通土月气，贵；不，亦富，有名声。");
+        helper.insertSanMing(sanMing);
+
+
+        //庚申日丑时
+        sanMing.setRiGanZhi(GENG_SHEN);
+        sanMing.setShiChen(CaculateGanZhi.CHOU);
+        sanMing.setDuanYu("庚申日丁丑时，丑月，金火运，极品。辰巳午未戌月，官印两旺，贵。申、酉，身太旺，须行木火。" +
+                "寅、卯，财太旺，须行金水。亥子，金寒水冷，须行火土运，贵。");
+        helper.insertSanMing(sanMing);
+
+
+        //庚戌日丑时
+        sanMing.setRiGanZhi(GENG_XU);
+        sanMing.setShiChen(CaculateGanZhi.CHOU);
+        sanMing.setDuanYu("庚戌日丁丑时，春财旺；夏官旺；秋平淡；冬无力。");
+        helper.insertSanMing(sanMing);
+
+
+        //庚子日寅时
+        sanMing.setRiGanZhi(GENG_ZI);
+        sanMing.setShiChen(CaculateGanZhi.YIN_DI_ZHI);
+        sanMing.setDuanYu("庚子日戊寅时，寅午年月，登科显达。纯申，三、四品贵。丑月、金火运，公卿。");
+        helper.insertSanMing(sanMing);
+
+
+        //庚寅日寅时
+        sanMing.setRiGanZhi(GENG_YIN);
+        sanMing.setShiChen(CaculateGanZhi.YIN_DI_ZHI);
+        sanMing.setDuanYu("庚寅日戊寅时，月通火局或秋生，行身旺运，贵。庚子月，自死。年见辛酉，贫夭残疾。身衰见丙太旺，同论。");
+        helper.insertSanMing(sanMing);
+
+
+        //庚辰日寅时
+        sanMing.setRiGanZhi(GENG_CHEN);
+        sanMing.setShiChen(CaculateGanZhi.YIN_DI_ZHI);
+        sanMing.setDuanYu("庚辰日戊寅时，春夏生，干透丙丁，运行身旺，贵。");
+        helper.insertSanMing(sanMing);
+
+
+        //庚午日寅时
+        sanMing.setRiGanZhi(GENG_WU);
+        sanMing.setShiChen(CaculateGanZhi.YIN_DI_ZHI);
+        sanMing.setDuanYu("庚午日戊寅时，寅午戌月，金衰火旺，当带残疾。纯寅，反主极贵。秋，金旺，多贵，但忌时遇亡劫，克身则凶。");
+        helper.insertSanMing(sanMing);
+
+
+        //庚申日寅时
+        sanMing.setRiGanZhi(GENG_SHEN);
+        sanMing.setShiChen(CaculateGanZhi.YIN_DI_ZHI);
+        sanMing.setDuanYu("庚申日戊寅时，时日并冲，忧伤妻子。寅卯辰月、火金运。侯伯。春月、西南运，大贵。寅月，贵显不久。一云先刑后吉。");
+        helper.insertSanMing(sanMing);
+
+
+        //庚戌日寅时
+        sanMing.setRiGanZhi(GENG_XU);
+        sanMing.setShiChen(CaculateGanZhi.YIN_DI_ZHI);
+        sanMing.setDuanYu("庚戌日戊寅时，贵。戌月，杂气财官印绶，贵。庚辰年，己卯月者，侯伯。");
+        helper.insertSanMing(sanMing);
+
+
+        //庚子日卯时
+        sanMing.setRiGanZhi(GENG_ZI);
+        sanMing.setShiChen(CaculateGanZhi.MAO);
+        sanMing.setDuanYu("庚子日己卯时，子卯相刑，忧伤妻子，子年月，贵。丑未，官至三品。一云破祖失土，大贵。");
+        helper.insertSanMing(sanMing);
+
+
+        //庚寅日卯时
+        sanMing.setRiGanZhi(GENG_YIN);
+        sanMing.setShiChen(CaculateGanZhi.MAO);
+        sanMing.setDuanYu("庚寅日己卯时，亥卯月，财星格，早荣早退。午戌，三合官局，干透金水，行西北运，吉。");
+        helper.insertSanMing(sanMing);
+
+
+        //庚辰日卯时
+        sanMing.setRiGanZhi(GENG_CHEN);
+        sanMing.setShiChen(CaculateGanZhi.MAO);
+        sanMing.setDuanYu("庚辰日己卯时，孤。年月通木气及有倚托者，贵。");
+        helper.insertSanMing(sanMing);
+
+
+        //庚午日卯时
+        sanMing.setRiGanZhi(GENG_WU);
+        sanMing.setShiChen(CaculateGanZhi.MAO);
+        sanMing.setDuanYu("庚午日己卯时，刑破。申子辰己酉丑，俱行东南运，贵。寅午戌亥卯未，须得西北运为佳。");
+        helper.insertSanMing(sanMing);
+
+
+        //庚申日卯时
+        sanMing.setRiGanZhi(GENG_SHEN);
+        sanMing.setShiChen(CaculateGanZhi.MAO);
+        sanMing.setDuanYu("庚申日己卯时，卯月，财星格，不贵即富。丑巳年月，翰林清贵，官至亚卿。一云少贫，中年有小灾，克妻少子。");
+        helper.insertSanMing(sanMing);
+
+
+        //庚戌日卯时
+        sanMing.setRiGanZhi(GENG_XU);
+        sanMing.setShiChen(CaculateGanZhi.MAO);
+        sanMing.setDuanYu("庚戌日己卯时，少孤母贱，中年贵。卯酉辰丑月，官至公卿。");
+        helper.insertSanMing(sanMing);
+
+
+
+        //庚子日辰时
+        sanMing.setRiGanZhi(GENG_ZI);
+        sanMing.setShiChen(CaculateGanZhi.CHEN);
+        sanMing.setDuanYu("庚子日庚辰时，申月生，井栏叉格。柱并运不见丙丁巳午寅戌字，贵。纯卯年月，位至公侯。");
+        helper.insertSanMing(sanMing);
+
+
+        //庚寅日辰时
+        sanMing.setRiGanZhi(GENG_YIN);
+        sanMing.setShiChen(CaculateGanZhi.CHEN);
+        sanMing.setDuanYu("庚寅日庚辰时，龙虎拱门。年月通火土者，贵。纯庚辰，王侯；不然，极凶。若年月遇木火，运再行，极品。");
+        helper.insertSanMing(sanMing);
+
+
+        //庚辰日辰时
+        sanMing.setRiGanZhi(GENG_CHEN);
+        sanMing.setShiChen(CaculateGanZhi.CHEN);
+        sanMing.setDuanYu("庚辰日庚辰时，魁罡，年月不见财官并戌字，贵；冲破者富。申子年月作井栏叉，行西南运，吉。" +
+                "纯庚辰，庚申或乙酉化金通无火气，凶徒小人。一云刑。");
+        helper.insertSanMing(sanMing);
+
+
+        //庚午日辰时
+        sanMing.setRiGanZhi(GENG_WU);
+        sanMing.setShiChen(CaculateGanZhi.CHEN);
+        sanMing.setDuanYu("庚午日庚辰时，自刑，金神入火乡。申月，行火木运，官可六品。");
+        helper.insertSanMing(sanMing);
+
+
+        //庚申日辰时
+        sanMing.setRiGanZhi(GENG_SHEN);
+        sanMing.setShiChen(CaculateGanZhi.CHEN);
+        sanMing.setDuanYu("庚申日庚辰时，子、申年月入井栏叉。柱、运不逢丙丁巳午字，贵。纯庚申、庚辰，行西北东运，武职极品。");
+        helper.insertSanMing(sanMing);
+
+
+        //庚戌日辰时
+        sanMing.setRiGanZhi(GENG_XU);
+        sanMing.setShiChen(CaculateGanZhi.CHEN);
+        sanMing.setDuanYu("庚戌日庚辰时，魁罡，土厚地方，官高禄重。子月、西南运，贵。寅辰年月，平常。");
+        helper.insertSanMing(sanMing);
+
+
+        //庚子日巳时
+        sanMing.setRiGanZhi(GENG_ZI);
+        sanMing.setShiChen(CaculateGanZhi.SI);
+        sanMing.setDuanYu("庚子日辛巳时，春富；夏、秋贵；冬贫。辰戌丑未年月，印绶，行西南运，贵。");
+        helper.insertSanMing(sanMing);
+
+
+        //庚寅日巳时
+        sanMing.setRiGanZhi(GENG_YIN);
+        sanMing.setShiChen(CaculateGanZhi.SI);
+        sanMing.setDuanYu("庚寅日辛巳时，巳酉丑月，身旺，贵。煞旺身弱月，贫。纯申年月，大贵悠久。亥月，东南运、主有权贵。");
+        helper.insertSanMing(sanMing);
+
+
+        //庚辰日巳时
+        sanMing.setRiGanZhi(GENG_CHEN);
+        sanMing.setShiChen(CaculateGanZhi.SI);
+        sanMing.setDuanYu("庚辰日辛巳时，巳酉丑月，身旺，贵。煞旺身弱月，贫。纯申年月，大贵悠久。亥月，东南运、主有权贵。");
+        helper.insertSanMing(sanMing);
+
+
+        //庚午日巳时
+        sanMing.setRiGanZhi(GENG_WU);
+        sanMing.setShiChen(CaculateGanZhi.SI);
+        sanMing.setDuanYu("庚午日辛巳时，巳午卯年月，进士风宪。巳申酉戌，行土木运，侯伯。");
+        helper.insertSanMing(sanMing);
+
+
+        //庚申日巳时
+        sanMing.setRiGanZhi(GENG_SHEN);
+        sanMing.setShiChen(CaculateGanZhi.SI);
+        sanMing.setDuanYu("庚申日辛巳时，刑。巳酉丑月，特达。春夏，木火旺，财官得地，吉。辰戌丑未，印绶，行南运，贵。");
+        helper.insertSanMing(sanMing);
+
+
+        //庚戌日巳时
+        sanMing.setRiGanZhi(GENG_XU);
+        sanMing.setShiChen(CaculateGanZhi.SI);
+        sanMing.setDuanYu("庚戌日辛巳时，年月遇财，吉。午未，行东南运，文职操权，恐无好终。寅申、翰林宰辅；若行火运，亦难善终。");
+        helper.insertSanMing(sanMing);
+
+
+
+        //庚子日午时
+        sanMing.setRiGanZhi(GENG_ZI);
+        sanMing.setShiChen(CaculateGanZhi.WU_DI_ZHI);
+        sanMing.setDuanYu("庚子日壬午时，时日并冲，忧伤妻子。通金气，贵。火气，大贵，但多忧劳禄。");
+        helper.insertSanMing(sanMing);
+
+
+        //庚寅日午时
+        sanMing.setRiGanZhi(GENG_YIN);
+        sanMing.setShiChen(CaculateGanZhi.WU_DI_ZHI);
+        sanMing.setDuanYu("庚寅日壬午时，辰戌丑未巳申酉月，身旺，俱贵。寅午，火旺，运气再遇，寿促；不然，残疾。");
+        helper.insertSanMing(sanMing);
+
+
+        //庚辰日午时
+        sanMing.setRiGanZhi(GENG_CHEN);
+        sanMing.setShiChen(CaculateGanZhi.WU_DI_ZHI);
+        sanMing.setDuanYu("庚辰日壬午时，食神旺，善饮食，有操持，发即死。");
+        helper.insertSanMing(sanMing);
+
+
+        //庚午日午时
+        sanMing.setRiGanZhi(GENG_WU);
+        sanMing.setShiChen(CaculateGanZhi.WU_DI_ZHI);
+        sanMing.setDuanYu("庚午日壬午时，寅午戌月、金柔火旺，畏缩残疾。亥子午月、行木火运，贵。");
+        helper.insertSanMing(sanMing);
+
+
+        //庚申日午时
+        sanMing.setRiGanZhi(GENG_SHEN);
+        sanMing.setShiChen(CaculateGanZhi.WU_DI_ZHI);
+        sanMing.setDuanYu("庚申日壬午时，禄马同乡，最吉。如午未年月，位至台阁。卯辰已，贵。戌月、行火土运，清虚冷职。");
+        helper.insertSanMing(sanMing);
+
+
+        //庚戌日午时
+        sanMing.setRiGanZhi(GENG_XU);
+        sanMing.setShiChen(CaculateGanZhi.WU_DI_ZHI);
+        sanMing.setDuanYu("庚戌日壬午时，卯月，正财，吉。未月，杂气财官，贵。辰丑月同。壬庚会合临午，无破无冲福自来；从此名利皆有望，贵人举荐上天阶。");
+        helper.insertSanMing(sanMing);
+
+
+        //庚子日未时
+        sanMing.setRiGanZhi(GENG_ZI);
+        sanMing.setShiChen(CaculateGanZhi.WEI);
+        sanMing.setDuanYu("庚子日癸未时，年月无丁透露，有己土制伏癸水者，贵。");
+        helper.insertSanMing(sanMing);
+
+
+        //庚寅日未时
+        sanMing.setRiGanZhi(GENG_YIN);
+        sanMing.setShiChen(CaculateGanZhi.WEI);
+        sanMing.setDuanYu("庚寅日癸未时，贵。辰戌丑未月，高。夏富。岁运同，巳酉申月，身旺，大贵。");
+        helper.insertSanMing(sanMing);
+
+
+        //庚辰日未时
+        sanMing.setRiGanZhi(GENG_CHEN);
+        sanMing.setShiChen(CaculateGanZhi.WEI);
+        sanMing.setDuanYu("庚辰日癸未时，魁罡日。辰中有土制癸。年月无丁；贵。卯月，金水运，七品贵。");
+        helper.insertSanMing(sanMing);
+
+
+        //庚午日未时
+        sanMing.setRiGanZhi(GENG_WU);
+        sanMing.setShiChen(CaculateGanZhi.WEI);
+        sanMing.setDuanYu("庚午日癸未时，贵。酉申巳亥年月，总领兵戎，官至二品。先虚后实。");
+        helper.insertSanMing(sanMing);
+
+
+        //庚申日未时
+        sanMing.setRiGanZhi(GENG_SHEN);
+        sanMing.setShiChen(CaculateGanZhi.WEI);
+        sanMing.setDuanYu("庚申日癸未时，酉月，武贵，初年剥权。年月寅午戌、申子辰二局相参，贵。");
+        helper.insertSanMing(sanMing);
+
+
+        //庚戌日未时
+        sanMing.setRiGanZhi(GENG_XU);
+        sanMing.setShiChen(CaculateGanZhi.WEI);
+        sanMing.setDuanYu("庚戌日癸未时，戌月、东方运，贵。辰月卯年，大贵。秋生最吉。夏，须行西北运。方吉。");
+        helper.insertSanMing(sanMing);
+
+
+
+        //庚子日申时
+        sanMing.setRiGanZhi(GENG_ZI);
+        sanMing.setShiChen(CaculateGanZhi.SHEN);
+        sanMing.setDuanYu("庚子日甲申时，时犯日禄，见财星，柱无巳寅丙，富贵双全。辰戌丑未土能生金，吉。寅午戌，平常。" +
+                "申酉，行火木运、贵。寅亥，三、四品，贵。卯，刑。子，多凶。");
+        helper.insertSanMing(sanMing);
+
+
+        //庚寅日申时
+        sanMing.setRiGanZhi(GENG_YIN);
+        sanMing.setShiChen(CaculateGanZhi.SHEN);
+        sanMing.setDuanYu("庚寅日甲申时，寅、亥月，官至三品。");
+        helper.insertSanMing(sanMing);
+
+
+        //庚辰日申时
+        sanMing.setRiGanZhi(GENG_CHEN);
+        sanMing.setShiChen(CaculateGanZhi.SHEN);
+        sanMing.setDuanYu("庚辰日甲申时，日魁罡，又归禄，俱不喜财官、柱无寅午戌丙丁巳字，贵。");
+        helper.insertSanMing(sanMing);
+
+
+        //庚午日申时
+        sanMing.setRiGanZhi(GENG_WU);
+        sanMing.setShiChen(CaculateGanZhi.SHEN);
+        sanMing.setDuanYu("庚午日甲申时，贵。通身旺月，无丙巳寅午丁，伤破，贵。");
+        helper.insertSanMing(sanMing);
+
+
+        //庚申日申时
+        sanMing.setRiGanZhi(GENG_SHEN);
+        sanMing.setShiChen(CaculateGanZhi.SHEN);
+        sanMing.setDuanYu("庚申日甲申时，贵。无卯午未戌丙丁字，贵。子丑月，金水运，文贵。余见庚申、甲申，专禄归禄。坚金非火不能锻炼，" +
+                "故巳午戌月生者，多贵。看归禄有七法，勿以为嫌。财月最吉。");
+        helper.insertSanMing(sanMing);
+
+
+        //庚戌日申时
+        sanMing.setRiGanZhi(GENG_XU);
+        sanMing.setShiChen(CaculateGanZhi.SHEN);
+        sanMing.setDuanYu("庚戌日甲申时，寅巳午戌月，妻贤子孝，贵。《神白经》运：金水带印，主清闲之福。");
+        helper.insertSanMing(sanMing);
+
+
+
+        //庚子日酉时
+        sanMing.setRiGanZhi(GENG_ZI);
+        sanMing.setShiChen(CaculateGanZhi.YOU);
+        sanMing.setDuanYu("庚子日乙酉时，主富。月通火气，贵：不通，平常，运通亦称意。卯亥年月，帅阃。一云破祖刑凶。");
+        helper.insertSanMing(sanMing);
+
+
+        //庚寅日酉时
+        sanMing.setRiGanZhi(GENG_YIN);
+        sanMing.setShiChen(CaculateGanZhi.YOU);
+        sanMing.setDuanYu("庚寅日乙酉时，刑。寅午戌吉。申子，凶暴。");
+        helper.insertSanMing(sanMing);
+
+
+        //庚辰日酉时
+        sanMing.setRiGanZhi(GENG_CHEN);
+        sanMing.setShiChen(CaculateGanZhi.YOU);
+        sanMing.setDuanYu("庚辰日乙酉时，刑。寅卯午年等月，二品权贵。戌亥大贵。《神白经》云：化金，主福厚。");
+        helper.insertSanMing(sanMing);
+
+
+        //庚午日酉时
+        sanMing.setRiGanZhi(GENG_WU);
+        sanMing.setShiChen(CaculateGanZhi.YOU);
+        sanMing.setDuanYu("庚午日乙酉时，刑，中贵。寅午戌亥卯未二局，贵。已，亦吉。");
+        helper.insertSanMing(sanMing);
+
+
+        //庚申日酉时
+        sanMing.setRiGanZhi(GENG_SHEN);
+        sanMing.setShiChen(CaculateGanZhi.YOU);
+        sanMing.setDuanYu("庚申日乙酉时，真刑。寅午戌，大贵。已酉丑，中贵。申子辰，富。亥卯未，凋零，一云财吉。");
+        helper.insertSanMing(sanMing);
+
+
+        //庚戌日酉时
+        sanMing.setRiGanZhi(GENG_XU);
+        sanMing.setShiChen(CaculateGanZhi.YOU);
+        sanMing.setDuanYu("庚戌日乙酉时，刑后发。寅午戌，官星明朗，贵。亥卯未，富或五、六品贵。已酉丑刃旺持权，" +
+                "主发迹于疆场，武臣最宜， 文臣亦主掌兵权，究竟受羊刃之祸。");
+        helper.insertSanMing(sanMing);
+
+
+
+        //庚子日戌时
+        sanMing.setRiGanZhi(GENG_ZI);
+        sanMing.setShiChen(CaculateGanZhi.XU);
+        sanMing.setDuanYu("庚子日丙戌时，春，偏官用财，吉。夏，煞旺身衰，凶暴。秋，身煞俱旺。已酉丑月，西方运，腰金衣紫。" +
+                "寅亥子月，金 绝病死，多贫贱。一云聋哑、犬狼伤。");
+        helper.insertSanMing(sanMing);
+
+
+        //庚寅日戌时
+        sanMing.setRiGanZhi(GENG_YIN);
+        sanMing.setShiChen(CaculateGanZhi.XU);
+        sanMing.setDuanYu("庚寅日丙戌时，申子辰月，偏官有制，吉。秋生，身煞俱旺，有禄权。纯午，孤贫无倚，" +
+                "不然残疾。丑午行西南，公卿以上贵。纯寅，亦贵。");
+        helper.insertSanMing(sanMing);
+
+
+        //庚辰日戌时
+        sanMing.setRiGanZhi(GENG_CHEN);
+        sanMing.setShiChen(CaculateGanZhi.XU);
+        sanMing.setDuanYu("庚辰日丙戌时，时日相冲，忧伤妻子。月通金水气，贵。木火气重者，艰辛，贫夭或残疾。");
+        helper.insertSanMing(sanMing);
+
+
+        //庚午日戌时
+        sanMing.setRiGanZhi(GENG_WU);
+        sanMing.setShiChen(CaculateGanZhi.XU);
+        sanMing.setDuanYu("庚午日丙戌时，申酉亥丑、富，贵三品。已午未申，透出壬字，艮坎干方运，卿相有寿。");
+        helper.insertSanMing(sanMing);
+
+
+        //庚申日戌时
+        sanMing.setRiGanZhi(GENG_SHEN);
+        sanMing.setShiChen(CaculateGanZhi.XU);
+        sanMing.setDuanYu("庚申日丙戌时，戌亥年月，东南运，贵。申月，大贵。");
+        helper.insertSanMing(sanMing);
+
+
+        //庚戌日戌时
+        sanMing.setRiGanZhi(GENG_XU);
+        sanMing.setShiChen(CaculateGanZhi.XU);
+        sanMing.setDuanYu("庚戌日丙戌时，辰戌丑未、印绶生助，吉。申子辰，偏官有制，贵。月通金气，不透壬字，行北运，贵。");
+        helper.insertSanMing(sanMing);
+
+
+
+        //庚子日亥时
+        sanMing.setRiGanZhi(GENG_ZI);
+        sanMing.setShiChen(CaculateGanZhi.HAI);
+        sanMing.setDuanYu("庚子日丁亥时，贵。申子辰月，伤官、劳碌。卯月、金火运、五六品贵。");
+        helper.insertSanMing(sanMing);
+
+
+        //庚寅日亥时
+        sanMing.setRiGanZhi(GENG_YIN);
+        sanMing.setShiChen(CaculateGanZhi.HAI);
+        sanMing.setDuanYu("庚寅日丁亥时，平，初贫，中秀，末主富旺。辰戌年月，贵显。申酉亥卯已午年月，干透乙已者，大贵。");
+        helper.insertSanMing(sanMing);
+
+
+        //庚辰日亥时
+        sanMing.setRiGanZhi(GENG_CHEN);
+        sanMing.setShiChen(CaculateGanZhi.HAI);
+        sanMing.setDuanYu("庚辰日丁亥时，纯未，显达。已午，西北运，风宪、金紫。亥卯、金紫，有权。申月，建禄，最吉。");
+        helper.insertSanMing(sanMing);
+
+
+        //庚午日亥时
+        sanMing.setRiGanZhi(GENG_WU);
+        sanMing.setShiChen(CaculateGanZhi.HAI);
+        sanMing.setDuanYu("庚午日丁亥时，贵。辰戌丑未月，土能生金，荣显。申亥酉月，行木火运，极品。");
+        helper.insertSanMing(sanMing);
+
+
+        //庚申日亥时
+        sanMing.setRiGanZhi(GENG_SHEN);
+        sanMing.setShiChen(CaculateGanZhi.HAI);
+        sanMing.setDuanYu("庚申日丁亥时，秋生，南运，贵显；北运，平常。");
+        helper.insertSanMing(sanMing);
+
+
+        //庚戌日亥时
+        sanMing.setRiGanZhi(GENG_XU);
+        sanMing.setShiChen(CaculateGanZhi.HAI);
+        sanMing.setDuanYu("庚戌日丁亥时，辰已午月，官煞虽混，亦主武贵。丑月，西运，郎官。辰月，西北运，方面。");
+        helper.insertSanMing(sanMing);
+
+
+        //辛丑日子时
+        sanMing.setRiGanZhi(XIN_CHOU);
+        sanMing.setShiChen(CaculateGanZhi.ZI);
+        sanMing.setDuanYu("辛丑日戊子时，丑月，杂气财官，贵。纯丑，儒职。纯辰、行西运，都宪。酉月，东北运，贵。" +
+                "忌庚寅月，刺面，凶。癸未月，受刑。癸丑月。破败孤凶。");
+        helper.insertSanMing(sanMing);
+
+
+        //辛卯日子时
+        sanMing.setRiGanZhi(XIN_MAO);
+        sanMing.setShiChen(CaculateGanZhi.ZI);
+        sanMing.setDuanYu("辛卯日戊子时，春生，寅贫、卯贵。夏清贵。秋羊刃，无益。冬富，丑月尤吉。辰戌未月，财官印绶、俱吉。" +
+                "《神白经》云：金火化，主贵。忌辛卯月，父母凶死。辛已月， 大凶。壬申月，尸不全死。");
+        helper.insertSanMing(sanMing);
+
+
+        //辛巳日子时
+        sanMing.setRiGanZhi(XIN_SI);
+        sanMing.setShiChen(CaculateGanZhi.ZI);
+        sanMing.setDuanYu("辛已日戊子时，寅已午月，正官，贵显。亥子，伤官，子少妻多。卯戌，五品贵。" +
+                "《神白经》云：金化象，主贵。忌丙寅月，刑、平。乙已月，先贫。丁酉月，夭。");
+        helper.insertSanMing(sanMing);
+
+
+        //辛未日子时
+        sanMing.setRiGanZhi(XIN_WEI);
+        sanMing.setShiChen(CaculateGanZhi.ZI);
+        sanMing.setDuanYu("辛未日戊子时，贵。寅已午酉年月，火木运，贵。亥子，翰苑。辰戌丑未，杂气财官印，俱吉。" +
+                "忌庚申月，尸不全死。壬子月，孤凶。癸丑月，凶刑死。");
+        helper.insertSanMing(sanMing);
+
+
+        //辛酉日子时
+        sanMing.setRiGanZhi(XIN_YOU);
+        sanMing.setShiChen(CaculateGanZhi.ZI);
+        sanMing.setDuanYu("辛酉日戊子时，子酉月生，无丙丁火，不行南运，三、四品贵。伤妻子；武职权重。《神白经》云：金火化，主贵，" +
+                "破祖方发。忌壬寅月，凶死。辛已月，大败，祖凶。庚戌月，凶死。");
+        helper.insertSanMing(sanMing);
+
+
+        //辛亥日子时
+        sanMing.setRiGanZhi(XIN_HAI);
+        sanMing.setShiChen(CaculateGanZhi.ZI);
+        sanMing.setDuanYu("辛亥日戊子时，不贵则富。亥月，无官，伤官伤尽，发福子少。春夏，亥子丑，木火运局，金紫风宪。");
+        helper.insertSanMing(sanMing);
+
+
+        //辛丑日丑时
+        sanMing.setRiGanZhi(XIN_CHOU);
+        sanMing.setShiChen(CaculateGanZhi.CHOU);
+        sanMing.setDuanYu("辛丑日己丑时，孤浊滞生。申酉月，金旺，运行火乡，疏通，刑伤妻子；为僧道，贵。纯丑，西南运，大贵。");
+        helper.insertSanMing(sanMing);
+
+
+        //辛卯日丑时
+        sanMing.setRiGanZhi(XIN_MAO);
+        sanMing.setShiChen(CaculateGanZhi.CHOU);
+        sanMing.setDuanYu("辛卯日己丑时，寅卯亥未等月，财星格，南方运，贵。辰戌丑未，印绶，南方运，吉。");
+        helper.insertSanMing(sanMing);
+
+
+        //辛巳日丑时
+        sanMing.setRiGanZhi(XIN_SI);
+        sanMing.setShiChen(CaculateGanZhi.CHOU);
+        sanMing.setDuanYu("辛已日己丑时，丑已申酉月生，金多克木，损伤妻子；僧道，贵。寅卯辰。月，南运，贵。");
+        helper.insertSanMing(sanMing);
+
+
+        //辛未日丑时
+        sanMing.setRiGanZhi(XIN_WEI);
+        sanMing.setShiChen(CaculateGanZhi.CHOU);
+        sanMing.setDuanYu("辛未日己丑时，寅卯未月，财星格。已午，官显。");
+        helper.insertSanMing(sanMing);
+
+
+        //辛酉日丑时
+        sanMing.setRiGanZhi(XIN_YOU);
+        sanMing.setShiChen(CaculateGanZhi.CHOU);
+        sanMing.setDuanYu("辛酉日己丑时，破祖。已酉丑月，金多克木，俊俏有财，难为妻子。寅午月，近侍，贵。");
+        helper.insertSanMing(sanMing);
+
+
+        //辛亥日丑时
+        sanMing.setRiGanZhi(XIN_HAI);
+        sanMing.setShiChen(CaculateGanZhi.CHOU);
+        sanMing.setDuanYu("辛亥日己丑时，寅已午月，官星明朗，立计成象。卯未，财局，富贵。未戌，冲，吉。申、子、辰月月，" +
+                "金水泄秀，佳。酉建禄、行木火运、吉。纯亥，金水泄秀，贵。");
+        helper.insertSanMing(sanMing);
+
+
+        //辛丑日寅时
+        sanMing.setRiGanZhi(XIN_CHOU);
+        sanMing.setShiChen(CaculateGanZhi.YIN_DI_ZHI);
+        sanMing.setDuanYu("辛丑日庚寅时，春贵；夏官旺；秋显达；冬吉。丑月、南运，风宪或武贵。" +
+                "一云发即风疾。年月酉、申金，无火气、贫夭。");
+        helper.insertSanMing(sanMing);
+
+
+        //辛卯日寅时
+        sanMing.setRiGanZhi(XIN_MAO);
+        sanMing.setShiChen(CaculateGanZhi.YIN_DI_ZHI);
+        sanMing.setDuanYu("辛卯日庚寅时，午未亥子，俱贵。寅卯申酉，六、七品贵。");
+        helper.insertSanMing(sanMing);
+
+
+        //辛巳日寅时
+        sanMing.setRiGanZhi(XIN_SI);
+        sanMing.setShiChen(CaculateGanZhi.YIN_DI_ZHI);
+        sanMing.setDuanYu("辛巳日庚寅时，春贵；夏官禄，行西北运，大贵；秋身旺；冬暴狠。一云刑后有财。");
+        helper.insertSanMing(sanMing);
+
+
+        //辛未日寅时
+        sanMing.setRiGanZhi(XIN_WEI);
+        sanMing.setShiChen(CaculateGanZhi.YIN_DI_ZHI);
+        sanMing.setDuanYu("辛未日庚寅时，已未丑月，名标金标，妻贤子孝，晚年风疾。寅卯午戌，俱吉。");
+        helper.insertSanMing(sanMing);
+
+
+        //辛酉日寅时
+        sanMing.setRiGanZhi(XIN_YOU);
+        sanMing.setShiChen(CaculateGanZhi.YIN_DI_ZHI);
+        sanMing.setDuanYu("辛酉日庚寅时，贵。春财聚；夏官禄成；秋身旺；亥子丑戌午酉等年月，俱贵。");
+        helper.insertSanMing(sanMing);
+
+
+        //辛亥日寅时
+        sanMing.setRiGanZhi(XIN_HAI);
+        sanMing.setShiChen(CaculateGanZhi.YIN_DI_ZHI);
+        sanMing.setDuanYu("辛亥日庚寅时，贵，主有暗疾。干透丙，发。午酉寅亥年月，南方运，贵。");
+        helper.insertSanMing(sanMing);
+
+
+
+        //辛丑日卯时
+        sanMing.setRiGanZhi(XIN_CHOU);
+        sanMing.setShiChen(CaculateGanZhi.MAO);
+        sanMing.setDuanYu("辛丑日辛卯时，春、夏生土厚地方，富贵。秋，克妻刑子。冬、艰辛。寅巳午月，" +
+                "近待，贵。甲戌年月、木火运，风宪。");
+        helper.insertSanMing(sanMing);
+
+
+        //辛卯日卯时
+        sanMing.setRiGanZhi(XIN_MAO);
+        sanMing.setShiChen(CaculateGanZhi.MAO);
+        sanMing.setDuanYu("辛卯日辛卯时，寅午戌月，财官双美，贵显。卯酉申辰年月，近侍，贵；见官印财星，妙。一云先苦，中年大发。");
+        helper.insertSanMing(sanMing);
+
+
+        //辛巳日卯时
+        sanMing.setRiGanZhi(XIN_SI);
+        sanMing.setShiChen(CaculateGanZhi.MAO);
+        sanMing.setDuanYu("辛巳日辛卯时，春，财旺；夏、官旺、秋，身强；冬，懦弱。巳酉年月，行木火运，贵戚。" +
+                "申月、水火运，金紫。巳月、 西北运，风宪。");
+        helper.insertSanMing(sanMing);
+
+
+        //辛未日卯时
+        sanMing.setRiGanZhi(XIN_WEI);
+        sanMing.setShiChen(CaculateGanZhi.MAO);
+        sanMing.setDuanYu("辛未日辛卯时，纯未、丁年月，虽大权贵，不善终。寅巳亥，纯吉。");
+        helper.insertSanMing(sanMing);
+
+
+        //辛酉日卯时
+        sanMing.setRiGanZhi(XIN_YOU);
+        sanMing.setShiChen(CaculateGanZhi.MAO);
+        sanMing.setDuanYu("辛酉日辛卯时，出身孤苦，中年获福，末年封妻荫子，贵。巳月，官印逢天德，贵当一品。丑月、木火运、中贵。" +
+                "申酉亥年月，东南运，风宪。");
+        helper.insertSanMing(sanMing);
+
+
+        //辛亥日卯时
+        sanMing.setRiGanZhi(XIN_HAI);
+        sanMing.setShiChen(CaculateGanZhi.MAO);
+        sanMing.setDuanYu("辛亥日辛卯时，春夏，财官双美，贵显。秋冬，背禄逐马、劳碌反复。纯亥，金水泄秀，多发高科。辰戌，吉。丑未，尤吉。");
+        helper.insertSanMing(sanMing);
+
+
+        //辛丑日辰时
+        sanMing.setRiGanZhi(XIN_CHOU);
+        sanMing.setShiChen(CaculateGanZhi.CHEN);
+        sanMing.setDuanYu("辛丑日壬辰时，春，财旺，妻贤子孝。夏，伤官见官，然亦多富。秋吉。冬，孤克，多贵。");
+        helper.insertSanMing(sanMing);
+
+
+        //辛卯日辰时
+        sanMing.setRiGanZhi(XIN_MAO);
+        sanMing.setShiChen(CaculateGanZhi.CHEN);
+        sanMing.setDuanYu("辛卯日壬辰时，春、伤官生财。夏，行藏反复，或凶暴。午未亦奇。秋，申酉身旺，得火则吉。" +
+                "冬，亥子伤官伤尽，有木土为妙；贵重轻高，未免刑克。辰戌丑未主武贵。");
+        helper.insertSanMing(sanMing);
+
+
+        //辛巳日辰时
+        sanMing.setRiGanZhi(XIN_SI);
+        sanMing.setShiChen(CaculateGanZhi.CHEN);
+        sanMing.setDuanYu("辛巳日在辰时，春、显达；夏，平常；有名利，主暴虐。酉月、行东运，贵。戌未，四库全，最贵。" +
+                "纯未，杂气财印。丑未，冲开，主有权贵。");
+        helper.insertSanMing(sanMing);
+
+
+        //辛未日辰时
+        sanMing.setRiGanZhi(XIN_WEI);
+        sanMing.setShiChen(CaculateGanZhi.CHEN);
+        sanMing.setDuanYu("辛未日壬辰时、身孤。春生，财星格，吉。夏，劳碌。秋，贵。冬，伤官伤尽，为奇。");
+        helper.insertSanMing(sanMing);
+
+
+        //辛酉日辰时
+        sanMing.setRiGanZhi(XIN_YOU);
+        sanMing.setShiChen(CaculateGanZhi.CHEN);
+        sanMing.setDuanYu("辛酉日壬辰时，春，富贵双全。夏好。秋身旺，贵。冬，白丁；子月，辛生地，学堂，主文学。" +
+                "年月火济，贵。甲戌月， 三品。");
+        helper.insertSanMing(sanMing);
+
+
+        //辛亥日辰时
+        sanMing.setRiGanZhi(XIN_HAI);
+        sanMing.setShiChen(CaculateGanZhi.CHEN);
+        sanMing.setDuanYu("辛亥日壬辰时，贵。春，财旺扶身。夏吉。秋身旺，好。冬，伤官伤尽，自立自成。卯未年月，贵。");
+        helper.insertSanMing(sanMing);
+
+
+        //辛丑日巳时
+        sanMing.setRiGanZhi(XIN_CHOU);
+        sanMing.setShiChen(CaculateGanZhi.SI);
+        sanMing.setDuanYu("辛丑日癸巳时，凶，别父母发福。春夏，吉。秋冬，凶暴。一云化贵、戒酒。");
+        helper.insertSanMing(sanMing);
+
+
+        //辛卯日巳时
+        sanMing.setRiGanZhi(XIN_MAO);
+        sanMing.setShiChen(CaculateGanZhi.SI);
+        sanMing.setDuanYu("辛卯日癸巳时，春夏，身弱寿促。秋，身强、劳力辛苦。如月气火木，三、四品贵。");
+        helper.insertSanMing(sanMing);
+
+
+        //辛巳日巳时
+        sanMing.setRiGanZhi(XIN_SI);
+        sanMing.setShiChen(CaculateGanZhi.SI);
+        sanMing.setDuanYu("辛巳日癸巳时，化贵。子午年，寅午戌月，贵，亥卯未，清贵。申子辰，无义之人。辛巳癸巳，" +
+                "两干不杂寅辰，透丙，俱主极贵。丑酉三合，亦吉。");
+        helper.insertSanMing(sanMing);
+
+
+        //辛未日巳时
+        sanMing.setRiGanZhi(XIN_WEI);
+        sanMing.setShiChen(CaculateGanZhi.SI);
+        sanMing.setDuanYu("辛未日癸巳时，寅午戌月，高命。巳酉丑，身旺平稳。申子辰，白丁。亥卯未，清贵。");
+        helper.insertSanMing(sanMing);
+
+
+        //辛酉日巳时
+        sanMing.setRiGanZhi(XIN_YOU);
+        sanMing.setShiChen(CaculateGanZhi.SI);
+        sanMing.setDuanYu("辛酉日癸巳时，贵显，酒色重。寅卯，财旺，吉。丑，三合全，富贵。");
+        helper.insertSanMing(sanMing);
+
+
+        //辛亥日巳时
+        sanMing.setRiGanZhi(XIN_HAI);
+        sanMing.setShiChen(CaculateGanZhi.SI);
+        sanMing.setDuanYu("辛亥日癸巳时，时日并冲，忧伤妻子。春财旺。夏，吉。秋，平。冬，凶暴。酉午年月，木火运，风宪、都堂。");
+        helper.insertSanMing(sanMing);
+
+
+        //辛丑日午时
+        sanMing.setRiGanZhi(XIN_CHOU);
+        sanMing.setShiChen(CaculateGanZhi.WU_DI_ZHI);
+        sanMing.setDuanYu("辛丑日甲午时，未申年月，四柱有利害，虽富寿夭。通金，虽贵不永。");
+        helper.insertSanMing(sanMing);
+
+
+        //辛卯日午时
+        sanMing.setRiGanZhi(XIN_MAO);
+        sanMing.setShiChen(CaculateGanZhi.WU_DI_ZHI);
+        sanMing.setDuanYu("辛卯日甲午时，卯月，武贵。寅戌，破祖；不然，残夭。巳午七、八品贵。运同。");
+        helper.insertSanMing(sanMing);
+
+
+        //辛巳日午时
+        sanMing.setRiGanZhi(XIN_SI);
+        sanMing.setShiChen(CaculateGanZhi.WU_DI_ZHI);
+        sanMing.setDuanYu("辛巳日甲午时，平。寅午戌，官旺，吉。申子辰、平常。卯戌年，官印双全，公候。");
+        helper.insertSanMing(sanMing);
+
+
+        //辛未日午时
+        sanMing.setRiGanZhi(XIN_WEI);
+        sanMing.setShiChen(CaculateGanZhi.WU_DI_ZHI);
+        sanMing.setDuanYu("辛未日甲午时，申子辰，偏官有制，吉。丑戌，方面。未月。贵。");
+        helper.insertSanMing(sanMing);
+
+
+        //辛酉日午时
+        sanMing.setRiGanZhi(XIN_YOU);
+        sanMing.setShiChen(CaculateGanZhi.WU_DI_ZHI);
+        sanMing.setDuanYu("辛酉日甲午时，春，财旺；夏，官贵，俱吉。秋，身强，虽富不永，冬，平常。");
+        helper.insertSanMing(sanMing);
+
+
+        //辛亥日午时
+        sanMing.setRiGanZhi(XIN_HAI);
+        sanMing.setShiChen(CaculateGanZhi.WU_DI_ZHI);
+        sanMing.setDuanYu("辛亥日甲午时，亥子年月，金水氵亟秀，文学堪夸。辰戌丑未、杂气财官，贵显。");
+        helper.insertSanMing(sanMing);
+
+
+        //辛丑日未时
+        sanMing.setRiGanZhi(XIN_CHOU);
+        sanMing.setShiChen(CaculateGanZhi.WEI);
+        sanMing.setDuanYu("辛丑日乙未时。刑。亥卯未寅月，财旺生官不贵则富。辰戌丑子，俱吉。");
+        helper.insertSanMing(sanMing);
+
+
+        //辛卯日未时
+        sanMing.setRiGanZhi(XIN_MAO);
+        sanMing.setShiChen(CaculateGanZhi.WEI);
+        sanMing.setDuanYu("辛卯日乙未时，亥卯未月，财盛生官，吉。");
+        helper.insertSanMing(sanMing);
+
+
+        //辛巳日未时
+        sanMing.setRiGanZhi(XIN_SI);
+        sanMing.setShiChen(CaculateGanZhi.WEI);
+        sanMing.setDuanYu("辛巳日乙未时，月通金火，贵。运通，亦贵。");
+        helper.insertSanMing(sanMing);
+
+
+        //辛未日未时
+        sanMing.setRiGanZhi(XIN_WEI);
+        sanMing.setShiChen(CaculateGanZhi.WEI);
+        sanMing.setDuanYu("辛未日乙未时，寅卯未年月，财旺生官，名高禄重。通火气，行西运；通金气，行南，俱吉。");
+        helper.insertSanMing(sanMing);
+
+
+        //辛酉日未时
+        sanMing.setRiGanZhi(XIN_YOU);
+        sanMing.setShiChen(CaculateGanZhi.WEI);
+        sanMing.setDuanYu("辛酉日乙未时，月通火气，行东运，贵。辰戌丑未，最吉。亥卯，贵显不久。秋生，身太旺，财官无气，凶夭。");
+        helper.insertSanMing(sanMing);
+
+
+        //辛亥日未时
+        sanMing.setRiGanZhi(XIN_HAI);
+        sanMing.setShiChen(CaculateGanZhi.WEI);
+        sanMing.setDuanYu("辛亥日乙未时，亥卯未月，财星格。吉。秋冬，孤独。辰、丑，近侍三品。");
+        helper.insertSanMing(sanMing);
+
+
+
+        //辛丑日申时
+        sanMing.setRiGanZhi(XIN_CHOU);
+        sanMing.setShiChen(CaculateGanZhi.SHEN);
+        sanMing.setDuanYu("辛丑日丙申时，化贵。少年蹇剥，中贵显。亥月，作化气看。吉。寅午戊巳未月，官星有气；春，财旺，俱吉。");
+        helper.insertSanMing(sanMing);
+
+
+        //辛卯日申时
+        sanMing.setRiGanZhi(XIN_MAO);
+        sanMing.setShiChen(CaculateGanZhi.SHEN);
+        sanMing.setDuanYu("辛卯日丙申时，化贵。寅巳午未戌酉亥月，官星明朗，山明水秀，登科荣贵。通士气，亦贵。一云少蹇、中、末好。");
+        helper.insertSanMing(sanMing);
+
+
+        //辛巳日申时
+        sanMing.setRiGanZhi(XIN_SI);
+        sanMing.setShiChen(CaculateGanZhi.SHEN);
+        sanMing.setDuanYu("辛巳日丙申时，见血则福；又云贵中失。申未年月，身厚，妻重子孝，武职三品。");
+        helper.insertSanMing(sanMing);
+
+
+        //辛未日申时
+        sanMing.setRiGanZhi(XIN_WEI);
+        sanMing.setShiChen(CaculateGanZhi.SHEN);
+        sanMing.setDuanYu("辛未日丙申时，因贵人门下得富。春，清贵。夏，平常。秋，富。冬，大贵寿促。《神白经》云：金水乖合，又化水，主贵。");
+        helper.insertSanMing(sanMing);
+
+
+        //辛酉日申时
+        sanMing.setRiGanZhi(XIN_YOU);
+        sanMing.setShiChen(CaculateGanZhi.SHEN);
+        sanMing.setDuanYu("辛酉日丙申时，寅巳午戌月，官旺，荣贵。︽神白经︾云：水化主贵。");
+        helper.insertSanMing(sanMing);
+
+
+        //辛亥日申时
+        sanMing.setRiGanZhi(XIN_HAI);
+        sanMing.setShiChen(CaculateGanZhi.SHEN);
+        sanMing.setDuanYu("辛亥日丙申时，发福，防孤克带疾。通金气，主人秀丽福厚。通水气，大贵。");
+        helper.insertSanMing(sanMing);
+
+
+        //辛丑日酉时
+        sanMing.setRiGanZhi(XIN_CHOU);
+        sanMing.setShiChen(CaculateGanZhi.YOU);
+        sanMing.setDuanYu("辛丑日丁酉时，高平稳。酉月、土木运，方面。戌亥子巳未年月，大贵。");
+        helper.insertSanMing(sanMing);
+
+
+        //辛卯日酉时
+        sanMing.setRiGanZhi(XIN_MAO);
+        sanMing.setShiChen(CaculateGanZhi.YOU);
+        sanMing.setDuanYu("辛卯日丁酉时，时日并冲。月通金气，不透丙丁，南方运，贵。");
+        helper.insertSanMing(sanMing);
+
+
+        //辛巳日酉时
+        sanMing.setRiGanZhi(XIN_SI);
+        sanMing.setShiChen(CaculateGanZhi.YOU);
+        sanMing.setDuanYu("辛巳日丁酉时，平。亥月，反复不定。午月，偏官带疾，显达寿促。子月，贵戚。一云有财有喜，寿不过三十一。");
+        helper.insertSanMing(sanMing);
+
+
+        //辛未日酉时
+        sanMing.setRiGanZhi(XIN_WEI);
+        sanMing.setShiChen(CaculateGanZhi.YOU);
+        sanMing.setDuanYu("辛未日丁酉时，不贵则富。月通金气，无丙丁字，行南运，贵。");
+        helper.insertSanMing(sanMing);
+
+
+        //辛酉日酉时
+        sanMing.setRiGanZhi(XIN_YOU);
+        sanMing.setShiChen(CaculateGanZhi.YOU);
+        sanMing.setDuanYu("辛酉日丁酉时，年月通金气，吉。丑月，西方运，风宪。寅午戌，贵。");
+        helper.insertSanMing(sanMing);
+
+
+        //辛亥日酉时
+        sanMing.setRiGanZhi(XIN_HAI);
+        sanMing.setShiChen(CaculateGanZhi.YOU);
+        sanMing.setDuanYu("辛亥日丁酉时，贵。丑寅卯酉年月；近待、金紫。");
+        helper.insertSanMing(sanMing);
+
+
+        //辛丑日戌时
+        sanMing.setRiGanZhi(XIN_CHOU);
+        sanMing.setShiChen(CaculateGanZhi.XU);
+        sanMing.setDuanYu("辛丑日戊戌时，刑害。辰戌丑未，印绶，行南运，大贵。寅巳，正官，贵。子午卯酉，武职风宪。");
+        helper.insertSanMing(sanMing);
+
+
+        //辛卯日戌时
+        sanMing.setRiGanZhi(XIN_MAO);
+        sanMing.setShiChen(CaculateGanZhi.XU);
+        sanMing.setDuanYu("辛卯日戊戌时，刑害，饕餮。亥，卯月，木火运，五、六品贵。");
+        helper.insertSanMing(sanMing);
+
+
+        //辛巳日戌时
+        sanMing.setRiGanZhi(XIN_SI);
+        sanMing.setShiChen(CaculateGanZhi.XU);
+        sanMing.setDuanYu("辛巳日戊戌时，辰戌丑未月，印绶，文贵少病；生土厚分野，贵。戌月，行木火运，风宪。");
+        helper.insertSanMing(sanMing);
+
+
+        //辛未日戌时
+        sanMing.setRiGanZhi(XIN_WEI);
+        sanMing.setShiChen(CaculateGanZhi.XU);
+        sanMing.setDuanYu("辛未日戊戌时，凶恶狠暴，忧伤妻子。寅巳午戌丑月，贵。申子辰亥，金水氵亟秀，尤贵。一云克父母，身旺，中年富。");
+        helper.insertSanMing(sanMing);
+
+
+        //辛酉日戌时
+        sanMing.setRiGanZhi(XIN_YOU);
+        sanMing.setShiChen(CaculateGanZhi.XU);
+        sanMing.setDuanYu("辛酉日戊戌时，凶刑。巳酉丑辰戌未年月，魁元，卿、尹之命。");
+        helper.insertSanMing(sanMing);
+
+
+        //辛亥日戌时
+        sanMing.setRiGanZhi(XIN_HAI);
+        sanMing.setShiChen(CaculateGanZhi.XU);
+        sanMing.setDuanYu("辛亥日戊戌时，凶狠、机谋奸猾，计较。一云凶后发。");
+        helper.insertSanMing(sanMing);
+
+
+        //辛丑日亥时
+        sanMing.setRiGanZhi(XIN_CHOU);
+        sanMing.setShiChen(CaculateGanZhi.HAI);
+        sanMing.setDuanYu("辛丑日己亥时，辰戌丑未及寅卯月生，作飞天禄马，贵。未月，金水运，金紫方面。");
+        helper.insertSanMing(sanMing);
+
+
+        //辛卯日亥时
+        sanMing.setRiGanZhi(XIN_MAO);
+        sanMing.setShiChen(CaculateGanZhi.HAI);
+        sanMing.setDuanYu("辛卯日己亥时，寅卯亥未月，财旺生官，终身有庆。巳酉丁年月，贵。");
+        helper.insertSanMing(sanMing);
+
+
+        //辛巳日亥时
+        sanMing.setRiGanZhi(XIN_SI);
+        sanMing.setShiChen(CaculateGanZhi.HAI);
+        sanMing.setDuanYu("辛巳日己亥时，填实巳字，不入飞天格，作官印论，主父母竭力扶持而后富贵。");
+        helper.insertSanMing(sanMing);
+
+
+        //辛未日亥时
+        sanMing.setRiGanZhi(XIN_WEI);
+        sanMing.setShiChen(CaculateGanZhi.HAI);
+        sanMing.setDuanYu("辛未日己亥时，贵。亥卯未寅月，金能克木，为财盛生官，名利贵显，巳午年月，富贵。秋生，透丙，亦吉。");
+        helper.insertSanMing(sanMing);
+
+
+        //辛酉日亥时
+        sanMing.setRiGanZhi(XIN_YOU);
+        sanMing.setShiChen(CaculateGanZhi.HAI);
+        sanMing.setDuanYu("辛酉日己亥时，辰戌丑未、杂气财官，吉。纯亥，冲巳中丙火为官，贵。");
+        helper.insertSanMing(sanMing);
+
+
+        //辛亥日亥时
+        sanMing.setRiGanZhi(XIN_HAI);
+        sanMing.setShiChen(CaculateGanZhi.HAI);
+        sanMing.setDuanYu("辛亥日己亥时，年月再亥，飞天禄马，三、四品，贵；武职极品；侯、伯。寅巳，填实，则减。子辰年月，亦吉。");
+        helper.insertSanMing(sanMing);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
