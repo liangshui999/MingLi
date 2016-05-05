@@ -21,6 +21,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".activity.ShareHelpActivity"/>
+        <activity android:name=".activity.ShuYuJieShiActivity"/>
+        <activity android:name=".activity.AboutSoftActvity"/>
         <service android:name=".Service.InsertDataService"/>
 
     </application>

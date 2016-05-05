@@ -18,6 +18,7 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.example.asus_cp.mingli.R;
 import com.example.asus_cp.mingli.fragment.BookFragment;
@@ -41,6 +42,7 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
     private ViewPager viewPagerMain;
     private ImageButton shareButton;
     private ImageButton helpButton;
+    private AlertDialog helpDialog;
 
 
 
@@ -86,7 +88,7 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
         fragments.add(mingFragment);
         fragments.add(yunFragment);
         fragments.add(bookFragment);
-        fragments.add(recordFragment);
+//        fragments.add(recordFragment);
         FragmentPagerAdapter adapter=new FragmentPagerAdapter(getSupportFragmentManager()) {
             @Override
             public Fragment getItem(int position) {
@@ -149,6 +151,7 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
 
     @Override
     public void onClick(View v) {
+
         switch (v.getId()){
             case R.id.ll_ming:
                 Log.d(tag,"点击了命");
@@ -190,10 +193,33 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
                 builder.setTitle("帮助");
                 LayoutInflater inflater=LayoutInflater.from(this);
                 View helpView=inflater.inflate(R.layout.help_dialog_layout, null);
+                TextView textShare= (TextView) helpView.findViewById(R.id.text_share_help);
+                TextView textShuYu= (TextView) helpView.findViewById(R.id.text_shu_yu_jie_si);
+                TextView textAbout= (TextView) helpView.findViewById(R.id.text_about_soft);
+                textShare.setOnClickListener(this);
+                textShuYu.setOnClickListener(this);
+                textAbout.setOnClickListener(this);
                 builder.setView(helpView);
-                AlertDialog helpDialog=builder.show();
+                helpDialog=builder.show();
                 helpDialog.show();
-
+                break;
+            case R.id.text_share_help:
+               // Toast.makeText(this,"分享帮助",Toast.LENGTH_SHORT).show();
+                Intent intent1=new Intent(this,ShareHelpActivity.class);
+                startActivity(intent1);
+                helpDialog.dismiss();
+                break;
+            case R.id.text_shu_yu_jie_si:
+                //Toast.makeText(this,"属于解释",Toast.LENGTH_SHORT).show();
+                Intent intent2=new Intent(this,ShuYuJieShiActivity.class);
+                startActivity(intent2);
+                helpDialog.dismiss();
+                break;
+            case R.id.text_about_soft:
+                //Toast.makeText(this,"关于软件",Toast.LENGTH_SHORT).show();
+                Intent intent3=new Intent(this,AboutSoftActvity.class);
+                startActivity(intent3);
+                helpDialog.dismiss();
                 break;
         }
     }

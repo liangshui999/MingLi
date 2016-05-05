@@ -11,6 +11,7 @@
         android:gravity="center_vertical"
         android:text="@string/share_help"
         android:textSize="@dimen/base_font_size"
+        android:clickable="true"
         />
     <ImageView
         android:layout_width="match_parent"
@@ -24,7 +25,8 @@
         android:layout_gravity="center_horizontal"
         android:gravity="center_vertical"
         android:text="@string/shu_yue_jie_si"
-        android:textSize="@dimen/base_font_size"/>
+        android:textSize="@dimen/base_font_size"
+        android:clickable="true"/>
 
     <ImageView
         android:layout_width="match_parent"
@@ -38,6 +40,7 @@
         android:layout_gravity="center_horizontal"
         android:gravity="center_vertical"
         android:text="@string/about_soft"
-        android:textSize="@dimen/base_font_size"/>
+        android:textSize="@dimen/base_font_size"
+        android:clickable="true"/>
 
 </LinearLayout>

@@ -119,7 +119,7 @@ public class MingFragment extends Fragment implements View.OnClickListener {
 
 
     private TextView textDiTianShui;//滴天髓解释的内容
-    private TextView textQiongTong;//穷通宝鉴解释的内容
+//    private TextView textQiongTong;//穷通宝鉴解释的内容
     private TextView textSanMing;//三命通会解释的内容
 
 
@@ -224,7 +224,7 @@ public class MingFragment extends Fragment implements View.OnClickListener {
         textViewBornTime= (TextView) v.findViewById(R.id.text_born_time);
 
         textDiTianShui= (TextView) v.findViewById(R.id.text_di_tian_shui);
-        textQiongTong= (TextView) v.findViewById(R.id.text_qiong_tong);
+//        textQiongTong= (TextView) v.findViewById(R.id.text_qiong_tong);
         textSanMing= (TextView) v.findViewById(R.id.text_san_ming);
 
 
@@ -412,7 +412,7 @@ public class MingFragment extends Fragment implements View.OnClickListener {
                         String sanMing=helper.querySanMingDuanYu(DBConstant.SanMing.SELECT_DUAN_YU,
                                 new String[]{riGanZhi, shiZhi});
                         textDiTianShui.setText(diTianShui);
-                        textQiongTong.setText(qiongTong);
+//                        textQiongTong.setText(qiongTong);
                         textSanMing.setText(sanMing);
 
                         //查询完毕之后关闭数据库
