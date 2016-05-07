@@ -1,63 +1,11 @@
 [
     {
-        "merged": "D:\\githubkaiyuan\\WheelDemo1\\wheelLibariry\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\slot_item.xml",
-        "source": "D:\\githubkaiyuan\\WheelDemo1\\wheelLibariry\\build\\intermediates\\bundles\\debug\\res\\layout\\slot_item.xml"
-    },
-    {
         "merged": "D:\\Android\\MingLi\\wheelLibariry\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\slot_item.xml",
         "source": "D:\\Android\\MingLi\\wheelLibariry\\build\\intermediates\\bundles\\debug\\res\\layout\\slot_item.xml"
     },
     {
-        "merged": "D:\\githubkaiyuan\\WheelDemo1\\wheelLibariry\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\speed1_layout.xml",
-        "source": "D:\\githubkaiyuan\\WheelDemo1\\wheelLibariry\\build\\intermediates\\bundles\\debug\\res\\layout\\speed1_layout.xml"
-    },
-    {
-        "merged": "D:\\githubkaiyuan\\WheelDemo1\\wheelLibariry\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\time2_layout.xml",
-        "source": "D:\\githubkaiyuan\\WheelDemo1\\wheelLibariry\\build\\intermediates\\bundles\\debug\\res\\layout\\time2_layout.xml"
-    },
-    {
-        "merged": "D:\\githubkaiyuan\\WheelDemo1\\wheelLibariry\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\cities_layout.xml",
-        "source": "D:\\githubkaiyuan\\WheelDemo1\\wheelLibariry\\build\\intermediates\\bundles\\debug\\res\\layout\\cities_layout.xml"
-    },
-    {
-        "merged": "D:\\Android\\MingLi\\wheelLibariry\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\time2_day.xml",
-        "source": "D:\\Android\\MingLi\\wheelLibariry\\build\\intermediates\\bundles\\debug\\res\\layout\\time2_day.xml"
-    },
-    {
-        "merged": "D:\\Android\\MingLi\\wheelLibariry\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\wheel_text_item.xml",
-        "source": "D:\\Android\\MingLi\\wheelLibariry\\build\\intermediates\\bundles\\debug\\res\\layout\\wheel_text_item.xml"
-    },
-    {
-        "merged": "D:\\Android\\MingLi\\wheelLibariry\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\passw_layout.xml",
-        "source": "D:\\Android\\MingLi\\wheelLibariry\\build\\intermediates\\bundles\\debug\\res\\layout\\passw_layout.xml"
-    },
-    {
-        "merged": "D:\\githubkaiyuan\\WheelDemo1\\wheelLibariry\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\units_item.xml",
-        "source": "D:\\githubkaiyuan\\WheelDemo1\\wheelLibariry\\build\\intermediates\\bundles\\debug\\res\\layout\\units_item.xml"
-    },
-    {
-        "merged": "D:\\Android\\MingLi\\wheelLibariry\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\speed1_layout.xml",
-        "source": "D:\\Android\\MingLi\\wheelLibariry\\build\\intermediates\\bundles\\debug\\res\\layout\\speed1_layout.xml"
-    },
-    {
-        "merged": "D:\\githubkaiyuan\\WheelDemo1\\wheelLibariry\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\country_layout.xml",
-        "source": "D:\\githubkaiyuan\\WheelDemo1\\wheelLibariry\\build\\intermediates\\bundles\\debug\\res\\layout\\country_layout.xml"
-    },
-    {
-        "merged": "D:\\githubkaiyuan\\WheelDemo1\\wheelLibariry\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\wheel_text_item.xml",
-        "source": "D:\\githubkaiyuan\\WheelDemo1\\wheelLibariry\\build\\intermediates\\bundles\\debug\\res\\layout\\wheel_text_item.xml"
-    },
-    {
-        "merged": "D:\\githubkaiyuan\\WheelDemo1\\wheelLibariry\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\passw_layout.xml",
-        "source": "D:\\githubkaiyuan\\WheelDemo1\\wheelLibariry\\build\\intermediates\\bundles\\debug\\res\\layout\\passw_layout.xml"
-    },
-    {
         "merged": "D:\\Android\\MingLi\\wheelLibariry\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\slot_machine_layout.xml",
         "source": "D:\\Android\\MingLi\\wheelLibariry\\build\\intermediates\\bundles\\debug\\res\\layout\\slot_machine_layout.xml"
-    },
-    {
-        "merged": "D:\\githubkaiyuan\\WheelDemo1\\wheelLibariry\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\slot_machine_layout.xml",
-        "source": "D:\\githubkaiyuan\\WheelDemo1\\wheelLibariry\\build\\intermediates\\bundles\\debug\\res\\layout\\slot_machine_layout.xml"
     },
     {
         "merged": "D:\\Android\\MingLi\\wheelLibariry\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\date_layout.xml",
@@ -68,31 +16,35 @@
         "source": "D:\\Android\\MingLi\\wheelLibariry\\build\\intermediates\\bundles\\debug\\res\\layout\\country_layout.xml"
     },
     {
-        "merged": "D:\\Android\\MingLi\\wheelLibariry\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\units_item.xml",
-        "source": "D:\\Android\\MingLi\\wheelLibariry\\build\\intermediates\\bundles\\debug\\res\\layout\\units_item.xml"
+        "merged": "D:\\Android\\MingLi\\wheelLibariry\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\time2_day.xml",
+        "source": "D:\\Android\\MingLi\\wheelLibariry\\build\\intermediates\\bundles\\debug\\res\\layout\\time2_day.xml"
     },
     {
-        "merged": "D:\\githubkaiyuan\\WheelDemo1\\wheelLibariry\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\time_layout.xml",
-        "source": "D:\\githubkaiyuan\\WheelDemo1\\wheelLibariry\\build\\intermediates\\bundles\\debug\\res\\layout\\time_layout.xml"
+        "merged": "D:\\Android\\MingLi\\wheelLibariry\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\units_item.xml",
+        "source": "D:\\Android\\MingLi\\wheelLibariry\\build\\intermediates\\bundles\\debug\\res\\layout\\units_item.xml"
     },
     {
         "merged": "D:\\Android\\MingLi\\wheelLibariry\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\time_layout.xml",
         "source": "D:\\Android\\MingLi\\wheelLibariry\\build\\intermediates\\bundles\\debug\\res\\layout\\time_layout.xml"
     },
     {
+        "merged": "D:\\Android\\MingLi\\wheelLibariry\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\wheel_text_item.xml",
+        "source": "D:\\Android\\MingLi\\wheelLibariry\\build\\intermediates\\bundles\\debug\\res\\layout\\wheel_text_item.xml"
+    },
+    {
         "merged": "D:\\Android\\MingLi\\wheelLibariry\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\time2_layout.xml",
         "source": "D:\\Android\\MingLi\\wheelLibariry\\build\\intermediates\\bundles\\debug\\res\\layout\\time2_layout.xml"
+    },
+    {
+        "merged": "D:\\Android\\MingLi\\wheelLibariry\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\passw_layout.xml",
+        "source": "D:\\Android\\MingLi\\wheelLibariry\\build\\intermediates\\bundles\\debug\\res\\layout\\passw_layout.xml"
     },
     {
         "merged": "D:\\Android\\MingLi\\wheelLibariry\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\cities_layout.xml",
         "source": "D:\\Android\\MingLi\\wheelLibariry\\build\\intermediates\\bundles\\debug\\res\\layout\\cities_layout.xml"
     },
     {
-        "merged": "D:\\githubkaiyuan\\WheelDemo1\\wheelLibariry\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\date_layout.xml",
-        "source": "D:\\githubkaiyuan\\WheelDemo1\\wheelLibariry\\build\\intermediates\\bundles\\debug\\res\\layout\\date_layout.xml"
-    },
-    {
-        "merged": "D:\\githubkaiyuan\\WheelDemo1\\wheelLibariry\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\time2_day.xml",
-        "source": "D:\\githubkaiyuan\\WheelDemo1\\wheelLibariry\\build\\intermediates\\bundles\\debug\\res\\layout\\time2_day.xml"
+        "merged": "D:\\Android\\MingLi\\wheelLibariry\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\speed1_layout.xml",
+        "source": "D:\\Android\\MingLi\\wheelLibariry\\build\\intermediates\\bundles\\debug\\res\\layout\\speed1_layout.xml"
     }
 ]

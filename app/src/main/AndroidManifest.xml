@@ -24,7 +24,10 @@
         <activity android:name=".activity.ShareHelpActivity"/>
         <activity android:name=".activity.ShuYuJieShiActivity"/>
         <activity android:name=".activity.AboutSoftActvity"/>
+        <activity android:name=".activity.MingRenListActivity"/>
+        <activity android:name=".activity.MingRenMIngLiContentActivity"/>
         <service android:name=".Service.InsertDataService"/>
+
 
     </application>
 

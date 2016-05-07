@@ -2,12 +2,13 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@mipmap/bj3">
-    <TextView
+    android:background="@mipmap/bj3"
+    >
+    <ImageView
+        android:id="@+id/img_bai_ye_jing"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="书籍"
-        android:textSize="33sp"
-        android:gravity="center"/>
+        android:gravity="center"
+        android:background="@mipmap/baiyejing"/>
 
 </LinearLayout>

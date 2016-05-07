@@ -21,10 +21,10 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.asus_cp.mingli.R;
-import com.example.asus_cp.mingli.fragment.BookFragment;
+import com.example.asus_cp.mingli.fragment.YinGuoBookFragment;
 import com.example.asus_cp.mingli.fragment.MingFragment;
+import com.example.asus_cp.mingli.fragment.MingRenMingLiFragment;
 import com.example.asus_cp.mingli.fragment.RecordFragment;
-import com.example.asus_cp.mingli.fragment.YunFragment;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -81,8 +81,8 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
 
         llMing.setBackgroundResource(R.color.blue);
         MingFragment mingFragment=new MingFragment();
-        YunFragment yunFragment=new YunFragment();
-        BookFragment bookFragment=new BookFragment();
+        MingRenMingLiFragment yunFragment=new MingRenMingLiFragment();
+        YinGuoBookFragment bookFragment=new YinGuoBookFragment();
         RecordFragment recordFragment=new RecordFragment();
         fragments=new ArrayList<Fragment>();
         fragments.add(mingFragment);
