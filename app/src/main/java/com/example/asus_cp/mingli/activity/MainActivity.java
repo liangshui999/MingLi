@@ -261,8 +261,9 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
         Bitmap bmp = Bitmap.createBitmap( w, h, Bitmap.Config.ARGB_8888 );
         View decorview = this.getWindow().getDecorView();
         decorview.setDrawingCacheEnabled(true);
-        decorview.buildDrawingCache();
+//        decorview.buildDrawingCache();
         bmp = decorview.getDrawingCache();
+
         OutputStream out=null;
         File file=new File(Environment.getExternalStorageDirectory(),"1.jpg");//这里需要申请权限的
         if(file.exists()){  //如果存在就删除
@@ -290,6 +291,7 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
             } catch (IOException e) {
                 e.printStackTrace();
             }
+            decorview.destroyDrawingCache();//释放资源,这儿一定要释放资源，不然每次创建的bitmap都是一样的
         }
     return file;
 
