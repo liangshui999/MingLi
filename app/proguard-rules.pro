@@ -15,3 +15,36 @@
 #-keepclassmembers class fqcn.of.javascript.interface.for.webview {
 #   public *;
 #}
+
+
+
+-keep class com.example.asus_cp.mingli.model.** {
+    *;
+}
+
+-keep class android.support.** {
+    *;
+}
+
+-keep class kankan.wheel.** {
+    *;
+}
+
+-keep interface  kankan.wheel.** { *; }
+
+
+-keep class butterknife.** { *; }
+-dontwarn butterknife.internal.**
+-keep class **$$ViewBinder { *; }
+
+-keepclasseswithmembernames class * {
+    @butterknife.* <fields>;
+}
+
+-keepclasseswithmembernames class * {
+    @butterknife.* <methods>;
+}
+
+
+
+

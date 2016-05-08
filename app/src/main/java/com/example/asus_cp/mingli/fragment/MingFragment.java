@@ -55,10 +55,7 @@ public class MingFragment extends Fragment implements View.OnClickListener {
 
     public static final String KONG="";
 
-
-
-
-    public static final int OFFSET=0;//控制时间区域的高度，有几行，如果等于2则上面有2行，下面有2行，总共是4行
+//    public static final int OFFSET=0;//控制时间区域的高度，有几行，如果等于2则上面有2行，下面有2行，总共是4行
 
     private CaculateGanZhi caculateGanZhi;//工具类的对象
 
@@ -68,7 +65,7 @@ public class MingFragment extends Fragment implements View.OnClickListener {
     private String hour=0+"";//用户选择的时数据
     private String minute=0+"";//用户选择的分钟数据
 
-    private ImageButton paiBaZi;
+    private ImageButton paiBaZi;//排八字的button
     private TextView nianZhu;
     private TextView yueZhu;
     private TextView riZhu;
@@ -121,10 +118,6 @@ public class MingFragment extends Fragment implements View.OnClickListener {
     private TextView textDiTianShui;//滴天髓解释的内容
 //    private TextView textQiongTong;//穷通宝鉴解释的内容
     private TextView textSanMing;//三命通会解释的内容
-
-
-
-
 
 
     /**
@@ -226,11 +219,6 @@ public class MingFragment extends Fragment implements View.OnClickListener {
         textDiTianShui= (TextView) v.findViewById(R.id.text_di_tian_shui);
 //        textQiongTong= (TextView) v.findViewById(R.id.text_qiong_tong);
         textSanMing= (TextView) v.findViewById(R.id.text_san_ming);
-
-
-
-
-
         imageButtonBornTime.setOnClickListener(this);
 
 
@@ -325,7 +313,7 @@ public class MingFragment extends Fragment implements View.OnClickListener {
                     }
 
                     @Override
-                    public void onAnimationEnd(Animation animation) {
+                    public void onAnimationEnd(Animation animation) {     //动画结束时将结果显示出来
                         //求取年月日时的干支
                         String nianGanZhi=caculateGanZhi.getYearGanZhi(year, month, day, hour, minute);
                         String yueGanZhi=caculateGanZhi.getMonthGanZhi(year, month, day, hour, minute);
@@ -418,7 +406,7 @@ public class MingFragment extends Fragment implements View.OnClickListener {
                         //查询完毕之后关闭数据库
                         SharedPreferences sharedPreferences=context.getSharedPreferences(SHARE_NAME, Context.MODE_PRIVATE);
                         int m=sharedPreferences.getInt(SHARE_KEY,-1);
-                        if(m!=-1){
+                        if(m!=-1){  //所有的数据都插入完毕之后m的数据会是1
                             helper.closeDB();
                         }
 
@@ -518,12 +506,7 @@ public class MingFragment extends Fragment implements View.OnClickListener {
                 });
                 AlertDialog dialog=builder.create();
                 dialog.show();
-
                 break;
-
-
-
-
 
 //            case R.id.btn_date_piker:
 //                Calendar c = Calendar.getInstance();

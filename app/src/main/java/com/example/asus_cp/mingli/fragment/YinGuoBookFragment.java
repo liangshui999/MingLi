@@ -16,6 +16,7 @@ import com.example.asus_cp.mingli.util.FileCopy;
 import java.io.File;
 
 /**
+ * 点击百业经之后，将百业经用手机中已经安装的阅读器打开
  * Created by asus-cp on 2016-04-21.
  */
 public class YinGuoBookFragment extends Fragment implements View.OnClickListener{
@@ -42,13 +43,13 @@ public class YinGuoBookFragment extends Fragment implements View.OnClickListener
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.img_bai_ye_jing:
-                String path=fileCopy.newFolder()+ File.separator+ "bayejing.doc";
+                String path=fileCopy.newFolder()+ File.separator+ "baiyejing.txt";
                 File file=new File(path);
                 Uri uri=Uri.fromFile(file);
                 Intent intent = new Intent("android.intent.action.VIEW");
                 intent.addCategory("android.intent.category.DEFAULT");
                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                intent.setDataAndType(uri, "application/msword");
+                intent.setDataAndType(uri, "text/plain");
                 startActivity(intent);
                 break;
         }

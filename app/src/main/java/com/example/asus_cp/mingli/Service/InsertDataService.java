@@ -5007,26 +5007,6 @@ public class InsertDataService extends IntentService {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         //所有数据插入完毕后才关闭数据库
         helper.closeDB();
         //所有数据插入完毕以后才向sharedPreferences里面插入值
@@ -5034,6 +5014,5 @@ public class InsertDataService extends IntentService {
         SharedPreferences.Editor editor=sharedPreferences.edit();
         editor.putInt(MingFragment.SHARE_KEY,1);
         editor.apply();
-
     }
 }

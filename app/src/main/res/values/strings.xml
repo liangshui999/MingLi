@@ -40,6 +40,10 @@
     <string name="di_tian_shui">滴天髓论命：</string>
     <string name="qiong_tong">穷通宝鉴论命：</string>
     <string name="san_ming">三命通会论命：</string>
+    <string name="pai_ba_zi_help">排八字的帮助</string>
+    <string name="ming_yun_xing_cheng_help">命运形成的帮助</string>
+    <string name="pai_ba_zi_help_content">点击日历图标选择好出生日期，然后选择性别，最后点击八卦按钮即可开始排八字了</string>
+    <string name="ming_yun_xing_cheng_help_content">点击百业经的封面上的任何一点，在弹出的对话框里选择一种打开方式即可</string>
     <string name="share_help">分享的操作帮助</string>
     <string name="shu_yue_jie_si">命理的基本概念</string>
     <string name="about_soft">关于软件</string>

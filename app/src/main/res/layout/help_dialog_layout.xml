@@ -4,6 +4,20 @@
     android:layout_height="match_parent"
     >
     <TextView
+        android:id="@+id/text_pai_ba_zi_help"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center_vertical"
+        android:text="@string/pai_ba_zi_help"
+        android:textSize="@dimen/base_font_size"
+        android:clickable="true"
+        />
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/blue"/>
+    <TextView
         android:id="@+id/text_share_help"
         android:layout_width="wrap_content"
         android:layout_height="30dp"
@@ -25,6 +39,21 @@
         android:layout_gravity="center_horizontal"
         android:gravity="center_vertical"
         android:text="@string/shu_yue_jie_si"
+        android:textSize="@dimen/base_font_size"
+        android:clickable="true"/>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/blue"/>
+
+    <TextView
+        android:id="@+id/text_ming_yun_xing_cheng_help"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center_vertical"
+        android:text="@string/ming_yun_xing_cheng_help"
         android:textSize="@dimen/base_font_size"
         android:clickable="true"/>
 
