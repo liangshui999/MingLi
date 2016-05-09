@@ -572,6 +572,9 @@ public class MingFragment extends Fragment implements View.OnClickListener {
 
         textEightDaYunNian.setText(KONG);
         textEightDaYunGanZhi.setText(KONG);
+
+        textDiTianShui.setText(KONG);
+        textSanMing.setText(KONG);
     }
 
     /**

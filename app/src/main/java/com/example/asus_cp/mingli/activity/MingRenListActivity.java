@@ -50,7 +50,7 @@ public class MingRenListActivity extends ListActivity {
         geJuPersons=new HashMap<String,List<Map<String,Object>>>();
         List<Map<String,Object>> zhengGuanGe=new ArrayList<Map<String,Object>>();
         Map<String,Object> item1=new HashMap<String,Object>();
-        item1.put(NAME,"张作霖");
+        item1.put(NAME,"欧阳修");
         Map<String,Object> item2=new HashMap<String,Object>();
         item2.put(NAME,"胡汉民");
         zhengGuanGe.add(item1);

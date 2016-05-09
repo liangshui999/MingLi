@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">MingLi</string>
+    <string name="app_name">八字命理</string>
     <string name="action_settings">Settings</string>
     <string name="ming">八字预测</string>
     <string name="yun">命例赏析</string>
